@@ -102,6 +102,24 @@
         <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </div>
+
+    <h1>响应式布局</h1>
+    <div>
+      <el-row :gutter="10">
+        <el-col :xs="{ span: 8, offset: 2 }" :sm="6" :md="4" :lg="3" :xl="1">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="{ span: 4, push: 4 }" :sm="6" :md="8" :lg="9" :xl="11">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :xs="{ span: 4, pull: 4 }" :sm="6" :md="8" :lg="9" :xl="11">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="4" :sm="6" :md="4" :lg="3" :xl="1">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
