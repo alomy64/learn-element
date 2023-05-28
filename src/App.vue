@@ -73,6 +73,35 @@
         <el-col :span="12" :pull="6"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
     </div>
+
+    <h1>对齐方式</h1>
+    <div>
+      <el-row type="flex" class="row-bg">
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="center">
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="end">
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="space-between">
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="space-around">
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
