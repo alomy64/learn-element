@@ -120,6 +120,18 @@
         </el-col>
       </el-row>
     </div>
+
+    <h1>基于断点的隐藏类</h1>
+    <div>
+      <el-row>
+        <el-col :span="12" class="hidden-xs-only">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="12" class="hidden-md-and-up">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
