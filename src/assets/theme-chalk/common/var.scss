@@ -1,0 +1,46 @@
+/* Break-point 媒体查询
+ -------------------------- */
+$--sm: 768px !default;
+$--md: 992px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+// Layout 响应式布局
+$--breakpoints: (
+  // < 768px
+  "xs": (max-width: $--sm - 1),
+  // >= 768px
+  "sm": (min-width: $--sm ),
+  // >= 992px
+  "md": (min-width: $--md ),
+  // >= 1200px
+  "lg": (min-width: $--lg ),
+  // >= 1920px
+  "xl": (min-width: $--xl ),
+);
+
+// 隐藏类 相关
+$--breakpoints-spec: (
+  // 当视口在 xs 尺寸时隐藏
+  "xs-only": (max-width: $--sm - 1),
+  // 当视口在 sm 及以上尺寸时隐藏
+  "sm-and-up": (min-width: $--sm),
+  // 当视口在 sm 尺寸时隐藏
+  "sm-only": (min-width: #{$--sm}) and (max-width: #{$--md - 1}),
+  // 当视口在 sm 及以下尺寸时隐藏
+  "sm-and-down": (max-width: $--md - 1),
+  // 当视口在 md 及以上尺寸时隐藏
+  "md-and-up": (min-width: $--md),
+  // 当视口在 md 尺寸时隐藏
+  "md-only": (min-width: #{$--md}) and (max-width: #{$--lg - 1}),
+  // 当视口在 md 及以下尺寸时隐藏
+  "md-and-down": (max-width: $--lg - 1),
+  // 当视口在 lg 及以上尺寸时隐藏
+  "lg-and-up": (min-width: $--lg),
+  // 当视口在 lg 尺寸时隐藏
+  "lg-only": (min-width: #{$--lg}) and (max-width: #{$--xl - 1}),
+  // 当视口在 lg 及以下尺寸时隐藏
+  "lg-and-down": (max-width: $--xl - 1),
+  // 当视口在 xl 尺寸时隐藏
+  "xl-only": (min-width: $--xl)
+);
