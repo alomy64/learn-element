@@ -52,8 +52,8 @@ export default {
     gutter() {
       let parent = this.$parent;
 
-      while (this.$parent && this.$parent.$options.name !== 'ElRow') {
-        parent = this.$parent;
+      while (parent && parent.$options.name !== 'ElRow') {
+        parent = parent.$parent;
       }
 
       return parent ? parent.gutter : 0;
