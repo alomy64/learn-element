@@ -132,12 +132,24 @@
         </el-col>
       </el-row>
     </div>
+
+    <h1>自定义标签</h1>
+    <div>
+      <el-row tag="ul" :gutter="40">
+        <el-col tag="li" :span="12">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col tag="li" :span="12">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
 <script>
-import ElRow from '@element/Row.vue';
-import ElCol from '@element/Col.vue';
+import ElRow from '@element/Row.js';
+import ElCol from '@element/Col.js';
 
 export default {
   name: 'App',
