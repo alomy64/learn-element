@@ -1,17 +1,10 @@
-.el-row {
-  margin-bottom: 20px;
+@import "./mixins/mixins.scss";
+@import "./mixins/utils.scss";
 
-  &::before,
-  &::after {
-    display: block;
-    content: "";
-  }
+@include b(row) {
+  @include utils-clearfix;
 
-  &::after {
-    clear: both;
-  }
-
-  &.el-row--flex {
+  @include m(flex) {
     display: flex;
 
     &::before,
@@ -19,27 +12,27 @@
       display: none;
     }
 
-    &.is-justify-end {
+    @include when(justify-end) {
       justify-content: flex-end;
     }
 
-    &.is-justify-center {
+    @include when(justify-center) {
       justify-content: center;
     }
 
-    &.is-justify-space-between {
+    @include when(justify-space-between) {
       justify-content: space-between;
     }
 
-    &.is-justify-space-around {
+    @include when(justify-space-around) {
       justify-content: space-around;
     }
 
-    &.is-align-middle {
+    @include when(align-middle) {
       align-items: center;
     }
 
-    &.is-align-bottom {
+    @include when(align-bottom) {
       align-items: flex-end;
     }
   }

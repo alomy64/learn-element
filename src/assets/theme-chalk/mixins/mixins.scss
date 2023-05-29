@@ -1,0 +1,43 @@
+@import "./config.scss";
+
+/* BEM
+ -------------------------- */
+// 块
+@mixin b($block) {
+  $B: $namespace + "-" + $block;
+
+  @at-root {
+    .#{$B} {
+      @content;
+    }
+  }
+}
+
+// 修饰符
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector +
+      $selector +
+      $modifier-separator +
+      $unit +
+      ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+// 状态
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
