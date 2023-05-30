@@ -56,3 +56,62 @@ $--footer-padding: 0 20px !default;
 /* Main
 -------------------------- */
 $--main-padding: 0 20px !default;
+
+/* Color 色彩
+-------------------------- */
+// 主色
+$--color-primary: #409eff !default;
+/// 基础白色
+$--color-white: #ffffff !default;
+/// 基础黑色
+$--color-black: #000000 !default;
+/// 主色 & 基础白色 混合
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+// 辅助色
+/// 成功色
+$--color-success: #67c23a !default;
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+/// 警告色
+$--color-warning: #e6a23c !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+/// 危险色
+$--color-danger: #f56c6c !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+/// 信息色
+$--color-info: #909399 !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+
+// 中性色
+/// 主要文字色
+$--color-text-primary: #303133 !default;
+/// 常规文字色
+$--color-text-regular: #606266 !default;
+/// 次要文字色
+$--color-text-secondary: #909399 !default;
+/// 占位文字色
+$--color-text-placeholder: #c0c4cc !default;
+/// 一级边框
+$--border-color-base: #dcdfe6 !default;
+/// 二级边框
+$--border-color-light: #e4e7ed !default;
+/// 三级边框
+$--border-color-lighter: #ebeef5 !default;
+/// 四级边框
+$--border-color-extra-light: #f2f6fc !default;
+
+// 背景
+/// 基础背景色
+$--background-color-base: #f5f7fa !default;
