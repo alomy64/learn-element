@@ -152,3 +152,32 @@ $--font-line-height-secondary: 16px !default;
 // 字体颜色
 /// 禁用色
 $--font-color-disabled-base: #bbb !default;
+
+/* Border 边框
+-------------------------- */
+/// 基础边框宽度
+$--border-width-base: 1px !default;
+/// 基础边框样式 实线
+$--border-style-base: solid !default;
+/// hover 时边框颜色
+$--border-color-hover: $--color-text-placeholder !default;
+/// 基础边框样式
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+
+// 边框圆角
+/// 大圆角
+$--border-radius-base: 4px !default;
+/// 小圆角
+$--border-radius-small: 2px !default;
+/// 圆形
+$--border-radius-circle: 100% !default;
+/// 无圆角
+$--border-radius-zero: 0 !default;
+
+// 投影
+/// 基础投影
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+/// 深色投影
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+/// 浅色投影
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
