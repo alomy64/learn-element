@@ -1,7 +1,8 @@
 @import "./mixins/mixins.scss";
+@import "./common/var.scss";
 
 @include b(footer) {
   box-sizing: border-box;
   flex-shrink: 0;
-  padding: 0 20px;
+  padding: $--footer-padding;
 }
