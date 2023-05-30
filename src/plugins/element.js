@@ -8,7 +8,14 @@ import '@/assets/theme-chalk/index.scss';
 // Vue.use(Element);
 
 // 按需引入
-import { Row, Col } from '@element';
+import {
+  Row, Col, Container, Header, Aside, Main, Footer,
+} from '@element';
 
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(Container);
+Vue.use(Header);
+Vue.use(Aside);
+Vue.use(Main);
+Vue.use(Footer);
