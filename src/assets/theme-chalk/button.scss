@@ -77,6 +77,18 @@
     }
   }
 
+  // 圆角按钮
+  @include when(round) {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+
+  // 圆形按钮
+  @include when(circle) {
+    border-radius: 50%;
+    padding: $--button-padding-vertical;
+  }
+
   // 主要按钮
   @include m(primary) {
     @include button-variant(
