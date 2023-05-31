@@ -1,4 +1,4 @@
-# my-element-ui
+# learn-element
 
 ## Project setup
 ```
