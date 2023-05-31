@@ -181,3 +181,52 @@ $--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !de
 $--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
 /// 浅色投影
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* Button 按钮
+-------------------------- */
+/// 字体大小
+$--button-font-size: $--font-size-base !default;
+/// 字体粗细
+$--button-font-weight: $--font-weight-primary !default;
+/// 边框圆角
+$--button-border-radius: $--border-radius-base !default;
+/// 垂直内间距
+$--button-padding-vertical: 12px !default;
+/// 水平内间距
+$--button-padding-horizontal: 20px !default;
+
+// 默认按钮（边框颜色、字体颜色、背景颜色）
+$--button-default-border-color: $--border-color-base !default;
+$--button-default-font-color: $--color-text-regular !default;
+$--button-default-background-color: $--color-white !default;
+
+// 主要按钮（边框颜色、字体颜色、背景颜色）
+$--button-primary-border-color: $--color-primary !default;
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-background-color: $--color-primary !default;
+
+// 成功按钮（边框颜色、字体颜色、背景颜色）
+$--button-success-border-color: $--color-success !default;
+$--button-success-font-color: $--color-white !default;
+$--button-success-background-color: $--color-success !default;
+
+// 警告按钮（边框颜色、字体颜色、背景颜色）
+$--button-warning-border-color: $--color-warning !default;
+$--button-warning-font-color: $--color-white !default;
+$--button-warning-background-color: $--color-warning !default;
+
+// 危险按钮（边框颜色、字体颜色、背景颜色）
+$--button-danger-border-color: $--color-danger !default;
+$--button-danger-font-color: $--color-white !default;
+$--button-danger-background-color: $--color-danger !default;
+
+// 信息按钮（边框颜色、字体颜色、背景颜色）
+$--button-info-border-color: $--color-info !default;
+$--button-info-font-color: $--color-white !default;
+$--button-info-background-color: $--color-info !default;
+
+// hover、focus 颜色百分比
+$--button-hover-tint-percent: 20% !default;
+
+// active 颜色百分比
+$--button-active-shade-percent: 10% !default;

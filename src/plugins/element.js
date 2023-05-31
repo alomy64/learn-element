@@ -9,7 +9,7 @@ import '@/assets/theme-chalk/index.scss';
 
 // 按需引入
 import {
-  Row, Col, Container, Header, Aside, Main, Footer, Icon,
+  Row, Col, Container, Header, Aside, Main, Footer, Icon, Button,
 } from '@element';
 
 Vue.use(Row);
@@ -20,3 +20,4 @@ Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
 Vue.use(Icon);
+Vue.use(Button);

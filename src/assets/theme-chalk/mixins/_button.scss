@@ -1,0 +1,50 @@
+@import "../common/var.scss";
+
+// 不同按钮的色彩变化
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    color: $color;
+    background: mix(
+      $--color-white,
+      $background-color,
+      $--button-hover-tint-percent
+    );
+    border-color: mix(
+      $--color-white,
+      $border-color,
+      $--button-hover-tint-percent
+    );
+  }
+
+  &:active {
+    color: $color;
+    background: mix(
+      $--color-black,
+      $background-color,
+      $--button-active-shade-percent
+    );
+    border-color: mix(
+      $--color-black,
+      $border-color,
+      $--button-active-shade-percent
+    );
+    outline: none;
+  }
+}
+
+// 按钮尺寸
+@mixin button-size(
+  $padding-vertical,
+  $padding-horizontal,
+  $font-size,
+  $border-radius
+) {
+  font-size: $font-size;
+  border-radius: $border-radius;
+  padding: $padding-vertical $padding-horizontal;
+}
