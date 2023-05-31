@@ -35,6 +35,10 @@
     );
     outline: none;
   }
+
+  &.is-plain {
+    @include button-plain($background-color);
+  }
 }
 
 // 按钮尺寸
@@ -47,4 +51,29 @@
   font-size: $font-size;
   border-radius: $border-radius;
   padding: $padding-vertical $padding-horizontal;
+}
+
+// 朴素按钮
+@mixin button-plain($color) {
+  color: $color;
+  border-color: mix($--color-white, $color, 60%);
+  background-color: mix($--color-white, $color, 90%);
+
+  &:hover,
+  &:focus {
+    color: $--color-white;
+    border-color: $color;
+    background-color: $color;
+  }
+
+  &:active {
+    color: $--color-white;
+    border-color: mix($--color-black, $color, $--button-active-shade-percent);
+    background-color: mix(
+      $--color-black,
+      $color,
+      $--button-active-shade-percent
+    );
+    outline: none;
+  }
 }

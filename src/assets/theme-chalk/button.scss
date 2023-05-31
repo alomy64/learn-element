@@ -53,6 +53,30 @@
     outline: none;
   }
 
+  // 朴素按钮
+  @include when(plain) {
+    &:hover,
+    &:focus {
+      color: $--color-primary;
+      border-color: $--color-primary;
+      background-color: $--color-white;
+    }
+    &:active {
+      color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
+      border-color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
+      background-color: $--color-white;
+      outline: none;
+    }
+  }
+
   // 主要按钮
   @include m(primary) {
     @include button-variant(

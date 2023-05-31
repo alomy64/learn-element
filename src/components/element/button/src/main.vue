@@ -1,5 +1,5 @@
 <template>
-  <button class="el-button" :class="[`el-button--${type}`]">
+  <button class="el-button" :class="[`el-button--${type}`, { 'is-plain': plain }]">
     <slot></slot>
   </button>
 </template>
@@ -14,6 +14,8 @@ export default {
       default: 'default',
       validator: (val) => ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text'].includes(val),
     },
+    // 是否朴素按钮
+    plain: Boolean,
   },
 };
 </script>
