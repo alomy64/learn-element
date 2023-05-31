@@ -1,63 +1,13 @@
 <template>
   <div id="app">
-    <h1>1</h1>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-    </el-container>
+    <h1>组件 el-icon</h1>
+    <el-icon name="eleme"></el-icon>
 
-    <h1>2</h1>
-    <el-container>
-      <el-header height="100px">Header</el-header>
-      <el-main>Main</el-main>
-      <el-footer height="80px">Footer</el-footer>
-    </el-container>
+    <h1>loading 动态</h1>
+    <el-icon name="loading"></el-icon>
 
-    <h1>3</h1>
-    <el-container direction="horizontal">
-      <el-aside>Aside</el-aside>
-      <el-main>Main</el-main>
-    </el-container>
-
-    <h1>4</h1>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-container>
-
-    <h1>5</h1>
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>Main</el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
-
-    <h1>6</h1>
-    <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-container>
-
-    <h1>7</h1>
-    <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
-      </el-container>
-    </el-container>
+    <h1>i 元素</h1>
+    <i class="el-icon-edit"></i>
   </div>
 </template>
 
