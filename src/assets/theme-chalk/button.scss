@@ -29,8 +29,16 @@
     $--button-border-radius
   );
 
+  // 相邻按钮间距
   & + & {
     margin-left: 10px;
+  }
+
+  // 图标和文字间距
+  [class*="el-icon-"] {
+    & + span {
+      margin-left: 5px;
+    }
   }
 
   &:hover,
@@ -152,5 +160,41 @@
       $--button-info-background-color,
       $--button-info-border-color
     );
+  }
+
+  // 文字按钮
+  @include m(text) {
+    color: $--color-primary;
+    border-color: transparent;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover,
+    &:focus {
+      color: mix(
+        $--color-white,
+        $--color-primary,
+        $--button-hover-tint-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    // 文字 + 禁用 按钮
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus {
+      border-color: transparent;
+    }
   }
 }

@@ -66,6 +66,17 @@
       <el-button type="primary" autofocus>默认聚焦</el-button>
       <el-button type="primary" autofocus>默认不聚焦</el-button>
     </el-row>
+
+    <h1>文字按钮</h1>
+    <el-row>
+      <el-button type="text">文字按钮</el-button>
+      <el-button type="text" disabled>文字按钮</el-button>
+    </el-row>
+
+    <h1>加载中</h1>
+    <el-row>
+      <el-button type="primary" :loading="true">加载中</el-button>
+    </el-row>
   </div>
 </template>
 

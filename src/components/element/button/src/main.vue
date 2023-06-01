@@ -7,8 +7,13 @@
       { 'is-plain': plain, 'is-round': round, 'is-circle': circle, 'is-disabled': disabled },
     ]"
   >
-    <i :class="icon" v-if="icon"></i>
-    <slot></slot>
+    <!-- 加载中图标和其他图标只能显示一种，加载中图标优先 -->
+    <i class="el-icon-loading" v-if="loading"></i>
+    <i :class="icon" v-if="icon && !loading"></i>
+
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
   </button>
 </template>
 <script>
@@ -34,6 +39,8 @@ export default {
     disabled: Boolean,
     // 是否默认聚焦 ==> 对应 class 中 :focus
     autofocus: Boolean,
+    // 是否加载中状态
+    loading: Boolean,
   },
 };
 </script>
