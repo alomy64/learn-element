@@ -1,6 +1,7 @@
 <template>
   <button
     class="el-button"
+    :autofocus="autofocus"
     :class="[
       `el-button--${type}`,
       { 'is-plain': plain, 'is-round': round, 'is-circle': circle, 'is-disabled': disabled },
@@ -31,6 +32,8 @@ export default {
     icon: String,
     // 是否禁用状态
     disabled: Boolean,
+    // 是否默认聚焦 ==> 对应 class 中 :focus
+    autofocus: Boolean,
   },
 };
 </script>

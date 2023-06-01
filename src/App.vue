@@ -60,6 +60,12 @@
       <el-button type="warning" plain disabled>警告按钮</el-button>
       <el-button type="danger" plain disabled>危险按钮</el-button>
     </el-row>
+
+    <h1>默认聚焦</h1>
+    <el-row>
+      <el-button type="primary" autofocus>默认聚焦</el-button>
+      <el-button type="primary" autofocus>默认不聚焦</el-button>
+    </el-row>
   </div>
 </template>
 
