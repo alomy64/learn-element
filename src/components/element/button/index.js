@@ -1,7 +1,7 @@
-import Button from './src/main.vue';
+import ElButton from './src/button.vue';
 
-Button.install = (Vue) => {
-  Vue.component(Button.name, Button);
+ElButton.install = (Vue) => {
+  Vue.component(ElButton.name, ElButton);
 };
 
-export default Button;
+export default ElButton;

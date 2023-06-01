@@ -1,7 +1,7 @@
-import Icon from './src/main.vue';
+import ElIcon from './src/icon.vue';
 
-Icon.install = (Vue) => {
-  Vue.component(Icon.name, Icon);
+ElIcon.install = (Vue) => {
+  Vue.component(ElIcon.name, ElIcon);
 };
 
-export default Icon;
+export default ElIcon;

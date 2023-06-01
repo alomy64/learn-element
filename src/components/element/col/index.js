@@ -1,7 +1,7 @@
-import Col from './src/Col';
+import ElCol from './src/col';
 
-Col.install = (Vue) => {
-  Vue.component(Col.name, Col);
+ElCol.install = (Vue) => {
+  Vue.component(ElCol.name, ElCol);
 };
 
-export default Col;
+export default ElCol;
