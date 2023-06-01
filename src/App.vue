@@ -77,6 +77,43 @@
     <el-row>
       <el-button type="primary" :loading="true">加载中</el-button>
     </el-row>
+
+    <h1>图标按钮</h1>
+    <el-row>
+      <el-button type="primary" icon="el-icon-edit"></el-button>
+      <el-button type="primary" icon="el-icon-share"></el-button>
+      <el-button type="primary" icon="el-icon-delete"></el-button>
+      <el-button type="primary" icon="el-icon-search">搜索</el-button>
+      <el-button type="primary"><i class="el-icon-upload el-icon--left"></i>上传</el-button>
+      <el-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
+    </el-row>
+
+    <h1>不同尺寸</h1>
+    <div>
+      <!-- 默认按钮 -->
+      <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button size="medium">中等按钮</el-button>
+        <el-button size="small">小型按钮</el-button>
+        <el-button size="mini">超小按钮</el-button>
+      </el-row>
+      <br />
+      <!-- 圆角按钮 -->
+      <el-row>
+        <el-button round>默认按钮</el-button>
+        <el-button size="medium" round>中等按钮</el-button>
+        <el-button size="small" round>小型按钮</el-button>
+        <el-button size="mini" round>超小按钮</el-button>
+      </el-row>
+      <br />
+      <!-- 圆形按钮 -->
+      <el-row>
+        <el-button icon="el-icon-check" circle></el-button>
+        <el-button size="medium" icon="el-icon-search" circle></el-button>
+        <el-button size="small" icon="el-icon-edit" circle></el-button>
+        <el-button size="mini" icon="el-icon-message" circle></el-button>
+      </el-row>
+    </div>
   </div>
 </template>
 

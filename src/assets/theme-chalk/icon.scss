@@ -1152,9 +1152,11 @@
   animation: rotating 2s linear infinite;
 }
 
+// 与左边元素保持间距
 .el-icon--right {
   margin-left: 5px;
 }
+// 与右边元素保持间距
 .el-icon--left {
   margin-right: 5px;
 }

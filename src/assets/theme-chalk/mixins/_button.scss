@@ -54,18 +54,6 @@
   }
 }
 
-// 按钮尺寸
-@mixin button-size(
-  $padding-vertical,
-  $padding-horizontal,
-  $font-size,
-  $border-radius
-) {
-  font-size: $font-size;
-  border-radius: $border-radius;
-  padding: $padding-vertical $padding-horizontal;
-}
-
 // 朴素按钮
 @mixin button-plain($color) {
   color: $color;
@@ -100,5 +88,27 @@
       border-color: mix($--color-white, $color, 80%);
       background-color: mix($--color-white, $color, 90%);
     }
+  }
+}
+
+// 按钮尺寸
+@mixin button-size(
+  $padding-vertical,
+  $padding-horizontal,
+  $font-size,
+  $border-radius
+) {
+  font-size: $font-size;
+  border-radius: $border-radius;
+  padding: $padding-vertical $padding-horizontal;
+
+  // 圆角按钮
+  &.is-round {
+    padding: $padding-vertical $padding-horizontal;
+  }
+
+  // 圆形按钮
+  &.is-circle {
+    padding: $padding-vertical;
   }
 }

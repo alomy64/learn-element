@@ -4,6 +4,7 @@
     :autofocus="autofocus"
     :class="[
       `el-button--${type}`,
+      size ? `el-button--${size}` : '',
       { 'is-plain': plain, 'is-round': round, 'is-circle': circle, 'is-disabled': disabled },
     ]"
   >
@@ -41,6 +42,11 @@ export default {
     autofocus: Boolean,
     // 是否加载中状态
     loading: Boolean,
+    // 尺寸
+    size: {
+      type: String,
+      validator: (val) => ['medium', 'small', 'mini'].includes(val),
+    },
   },
 };
 </script>
