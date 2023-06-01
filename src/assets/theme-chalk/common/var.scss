@@ -195,6 +195,11 @@ $--button-padding-vertical: 12px !default;
 /// 水平内间距
 $--button-padding-horizontal: 20px !default;
 
+// 禁用按钮（边框颜色、字体颜色、背景颜色）
+$--button-disabled-border-color: $--border-color-lighter !default;
+$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-background-color: $--color-white !default;
+
 // 默认按钮（边框颜色、字体颜色、背景颜色）
 $--button-default-border-color: $--border-color-base !default;
 $--button-default-font-color: $--color-text-regular !default;

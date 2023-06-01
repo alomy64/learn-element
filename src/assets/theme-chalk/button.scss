@@ -39,6 +39,7 @@
     border-color: $--color-primary-light-7;
     background-color: $--color-primary-light-9;
   }
+
   &:active {
     color: mix(
       $--color-black,
@@ -61,6 +62,7 @@
       border-color: $--color-primary;
       background-color: $--color-white;
     }
+
     &:active {
       color: mix(
         $--color-black,
@@ -87,6 +89,24 @@
   @include when(circle) {
     border-radius: 50%;
     padding: $--button-padding-vertical;
+  }
+
+  // 禁用按钮
+  @include when(disabled) {
+    // 禁用 + 朴素 按钮
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-plain,
+    &.is-plain:hover,
+    &.is-plain:focus,
+    &.is-plain:active {
+      cursor: not-allowed;
+      color: $--button-disabled-font-color;
+      border-color: $--button-disabled-border-color;
+      background-color: $--button-disabled-background-color;
+    }
   }
 
   // 主要按钮

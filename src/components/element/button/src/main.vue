@@ -1,7 +1,10 @@
 <template>
   <button
     class="el-button"
-    :class="[`el-button--${type}`, { 'is-plain': plain, 'is-round': round, 'is-circle': circle }]"
+    :class="[
+      `el-button--${type}`,
+      { 'is-plain': plain, 'is-round': round, 'is-circle': circle, 'is-disabled': disabled },
+    ]"
   >
     <i :class="icon" v-if="icon"></i>
     <slot></slot>
@@ -26,6 +29,8 @@ export default {
     circle: Boolean,
     // 图标类名
     icon: String,
+    // 是否禁用状态
+    disabled: Boolean,
   },
 };
 </script>
