@@ -1,7 +1,9 @@
 <template>
   <button
     class="el-button"
+    @click="(evt) => $emit('click', evt)"
     :autofocus="autofocus"
+    :type="nativeType"
     :class="[
       `el-button--${type}`,
       size ? `el-button--${size}` : '',
@@ -46,6 +48,11 @@ export default {
     size: {
       type: String,
       validator: (val) => ['medium', 'small', 'mini'].includes(val),
+    },
+    // 原生 type 属性
+    nativeType: {
+      type: String,
+      default: 'button',
     },
   },
 };

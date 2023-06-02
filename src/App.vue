@@ -159,12 +159,26 @@
         <el-button type="text" disabled>文字按钮</el-button>
       </el-button-group>
     </div>
+
+    <h1>原生 type 属性</h1>
+    <el-row>
+      <el-button @click="handleClick">默认</el-button>
+      <el-button @click="handleClick" native-type="button">按钮</el-button>
+      <el-button @click="handleClick" native-type="submit">提交</el-button>
+      <el-button @click="handleClick" native-type="reset">重置</el-button>
+    </el-row>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+  methods: {
+    // 按钮点击
+    handleClick(e) {
+      console.log(e);
+    },
+  },
 };
 </script>
 
