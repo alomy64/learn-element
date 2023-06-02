@@ -7,7 +7,13 @@
     :class="[
       `el-button--${type}`,
       size ? `el-button--${size}` : '',
-      { 'is-plain': plain, 'is-round': round, 'is-circle': circle, 'is-disabled': disabled },
+      {
+        'is-plain': plain,
+        'is-round': round,
+        'is-circle': circle,
+        'is-disabled': disabled,
+        'is-loading': loading,
+      },
     ]"
   >
     <!-- 加载中图标和其他图标只能显示一种，加载中图标优先 -->
