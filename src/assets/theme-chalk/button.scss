@@ -115,6 +115,11 @@
       border-color: $--button-disabled-border-color;
       background-color: $--button-disabled-background-color;
     }
+
+    // 禁用 + 文字 按钮
+    &.el-button--text {
+      background-color: transparent;
+    }
   }
 
   // 主要按钮

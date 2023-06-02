@@ -68,7 +68,7 @@
     </el-row>
 
     <h1>文字按钮</h1>
-    <el-row>
+    <el-row style="background: black">
       <el-button type="text">文字按钮</el-button>
       <el-button type="text" disabled>文字按钮</el-button>
     </el-row>
