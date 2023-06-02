@@ -7,6 +7,7 @@ import Main from '@element/main';
 import Footer from '@element/footer';
 import Icon from '@element/icon';
 import Button from '@element/button';
+import ButtonGroup from '@element/button-group';
 
 const components = [Row, Col];
 
@@ -27,8 +28,9 @@ export default {
   Footer,
   Icon,
   Button,
+  ButtonGroup,
 };
 
 export {
-  install, Row, Col, Container, Header, Aside, Main, Footer, Icon, Button,
+  install, Row, Col, Container, Header, Aside, Main, Footer, Icon, Button, ButtonGroup,
 };

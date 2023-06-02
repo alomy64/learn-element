@@ -114,6 +114,51 @@
         <el-button size="mini" icon="el-icon-message" circle></el-button>
       </el-row>
     </div>
+
+    <h1>按钮组</h1>
+    <div>
+      <!-- 两个按钮  图标 + 文字 -->
+      <el-button-group>
+        <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
+        <el-button type="primary">
+          下一页<i class="el-icon-arrow-right el-icon--right"></i>
+        </el-button>
+      </el-button-group>
+      <span style="margin-right: 10px"></span>
+
+      <!-- 多个按钮 -->
+      <el-button-group>
+        <el-button type="primary" icon="el-icon-edit"></el-button>
+        <el-button type="primary" icon="el-icon-share"></el-button>
+        <el-button type="primary" icon="el-icon-message"></el-button>
+        <el-button type="primary" icon="el-icon-delete"></el-button>
+      </el-button-group>
+      <span style="margin-right: 10px"></span>
+
+      <!-- 单个普通按钮 -->
+      <el-button-group>
+        <el-button type="primary" icon="el-icon-delete"></el-button>
+      </el-button-group>
+      <span style="margin-right: 10px"></span>
+
+      <!-- 单个圆角按钮 -->
+      <el-button-group>
+        <el-button round type="primary" icon="el-icon-delete"></el-button>
+      </el-button-group>
+      <span style="margin-right: 10px"></span>
+
+      <!-- 单个圆形按钮 -->
+      <el-button-group>
+        <el-button circle type="primary" icon="el-icon-delete"></el-button>
+      </el-button-group>
+      <span style="margin-right: 10px"></span>
+
+      <!-- 多个文字按钮 -->
+      <el-button-group>
+        <el-button type="text">文字按钮</el-button>
+        <el-button type="text" disabled>文字按钮</el-button>
+      </el-button-group>
+    </div>
   </div>
 </template>
 
