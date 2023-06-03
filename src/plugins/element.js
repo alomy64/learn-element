@@ -19,6 +19,7 @@ import {
   Icon,
   Button,
   ButtonGroup,
+  Link,
 } from '@element';
 
 Vue.use(Row);
@@ -31,3 +32,4 @@ Vue.use(Footer);
 Vue.use(Icon);
 Vue.use(Button);
 Vue.use(ButtonGroup);
+Vue.use(Link);

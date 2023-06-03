@@ -252,5 +252,30 @@ $--button-mini-padding-horizontal: 15px !default;
 // 颜色百分比
 /// hover、focus
 $--button-hover-tint-percent: 20% !default;
-/// active 颜色百分比
+/// active
 $--button-active-shade-percent: 10% !default;
+
+/* Link 文字链接
+-------------------------- */
+/// 字体大小
+$--link-font-size: $--font-size-base !default;
+/// 字体粗细
+$--link-font-weight: $--font-weight-primary !default;
+
+// 字体颜色
+/// 默认链接
+$--link-default-font-color: $--color-text-regular !default;
+/// 默认链接 活动状态
+$--link-default-active-color: $--color-primary !default;
+/// 禁用链接
+$--link-disabled-font-color: $--color-text-placeholder !default;
+/// 主要链接
+$--link-primary-font-color: $--color-primary !default;
+/// 成功链接
+$--link-success-font-color: $--color-success !default;
+/// 警告链接
+$--link-warning-font-color: $--color-warning !default;
+/// 危险链接
+$--link-danger-font-color: $--color-danger !default;
+/// 信息链接
+$--link-info-font-color: $--color-info !default;
