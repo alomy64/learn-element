@@ -61,6 +61,17 @@ $typeMap: (
     line-height: 18px;
   }
 
+  // 前置图标 el-alert__icon
+  .#{$b}__icon {
+    font-size: $--alert-icon-size;
+    width: $--alert-icon-size;
+  }
+
+  // 文字居中
+  @include when(center) {
+    justify-content: center;
+  }
+
   // 亮色主题
   @include when(light) {
     // 关闭按钮
