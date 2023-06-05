@@ -47,6 +47,13 @@ $typeMap: (
     font-size: $--alert-title-font-size;
     opacity: 1;
     cursor: pointer;
+
+    // 自定义关闭按钮
+    @include when(customed) {
+      font-style: normal;
+      font-size: $--alert-close-customed-font-size;
+      top: 9px;
+    }
   }
 
   // el-alert__content

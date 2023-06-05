@@ -294,7 +294,8 @@ $--alert-title-font-size: 13px !default;
 $--alert-close-font-size: 12px !default;
 /// 图标
 $--alert-icon-size: 16px !default;
-
+/// 自定义关闭按钮
+$--alert-close-customed-font-size: 13px !default;
 
 // 背景色
 /// 成功警告
@@ -305,4 +306,3 @@ $--alert-info-color: $--color-info-lighter !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 /// 危险警告
 $--alert-danger-color: $--color-danger-lighter !default;
-

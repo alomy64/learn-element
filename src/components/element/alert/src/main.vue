@@ -6,8 +6,8 @@
       v-show="visible"
       role="alert"
     >
-      <!--
-        showIcon：为 true 时，显示此前置图标
+      <!-- 前置图标
+        showIcon：为 true 时，显示此
         class：图标类型、大小皆不同
        -->
       <i class="el-alert__icon" :class="[iconClass]" v-if="showIcon"></i>
@@ -19,8 +19,18 @@
           <slot name="title">{{ title }}</slot>
         </span>
 
-        <!-- 关闭按钮 if：closable 为 true 时显示 -->
-        <i class="el-alert__closebtn el-icon-close" v-show="closable" @click="close"></i>
+        <!-- 关闭按钮
+          if：closable 为 true 时显示
+          class：根据 closeText 判断显示关闭按钮或者自定义文本
+         -->
+        <i
+          class="el-alert__closebtn"
+          :class="{ 'el-icon-close': !closeText, 'is-customed': closeText }"
+          v-show="closable"
+          @click="close"
+        >
+          {{ closeText }}
+        </i>
       </div>
     </div>
   </Transition>
@@ -61,6 +71,8 @@ export default {
     center: Boolean,
     // 是否显示图标
     showIcon: Boolean,
+    // 关闭按钮自定义文本
+    closeText: String,
   },
 
   data() {
@@ -81,6 +93,7 @@ export default {
     // 关闭警告
     close() {
       this.visible = false;
+      this.$emit('close');
     },
   },
 };
