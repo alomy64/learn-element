@@ -1,0 +1,104 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+
+// 最外层 class
+$b: el-alert;
+// 类型映射
+$typeMap: (
+  success: (
+    color: $--color-success,
+    background-color: $--alert-success-color,
+  ),
+  warning: (
+    color: $--color-warning,
+    background-color: $--alert-warning-color,
+  ),
+  error: (
+    color: $--color-danger,
+    background-color: $--alert-danger-color,
+  ),
+  info: (
+    color: $--color-info,
+    background-color: $--alert-info-color,
+  ),
+);
+
+// el-alert
+@include b(alert) {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  background-color: $--color-white;
+  margin: 0;
+  padding: $--alert-padding;
+  border-radius: $--alert-border-radius;
+  opacity: 1;
+  transition: opacity 0.2s;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  // 关闭按钮
+  .#{$b}__closebtn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: $--alert-title-font-size;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  // el-alert__content
+  .#{$b}__content {
+    display: table-cell;
+    padding: 0 8px;
+  }
+
+  // el-alert__title
+  .#{$b}__title {
+    font-size: $--alert-title-font-size;
+    line-height: 18px;
+  }
+
+  // 亮色主题
+  @include when(light) {
+    // 关闭按钮
+    .#{$b}__closebtn {
+      color: $--color-text-placeholder;
+    }
+  }
+
+  // 暗色主题
+  @include when(dark) {
+    // 关闭按钮
+    .#{$b}__closebtn {
+      color: $--color-white;
+    }
+  }
+
+  // 不同类型
+  @each $type, $curTypeMap in $typeMap {
+    @include m($type) {
+      // 循环属性和属性值组成的样式映射
+      @each $styleKey, $styleVal in $curTypeMap {
+        // 亮色主题
+        &.is-light {
+          #{$styleKey}: $styleVal;
+        }
+
+        // 暗色主题
+        &.is-dark {
+          color: $--color-white;
+          background-color: inspect(map-get($curTypeMap, color));
+        }
+      }
+    }
+  }
+}
+
+// 过渡动画 显示/隐藏
+.el-alert-fade-enter,
+.el-alert-fade-leave-active {
+  opacity: 0;
+}

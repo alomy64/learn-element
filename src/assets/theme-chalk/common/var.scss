@@ -279,3 +279,27 @@ $--link-warning-font-color: $--color-warning !default;
 $--link-danger-font-color: $--color-danger !default;
 /// 信息链接
 $--link-info-font-color: $--color-info !default;
+
+/* Alert 警告
+-------------------------- */
+/// 内间距
+$--alert-padding: 8px 16px !default;
+/// 边框圆角
+$--alert-border-radius: $--border-radius-base !default;
+
+// 字体大小
+/// 标题
+$--alert-title-font-size: 13px !default;
+/// 关闭按钮
+$--alert-close-font-size: 12px !default;
+
+// 背景色
+/// 成功警告
+$--alert-success-color: $--color-success-lighter !default;
+/// 信息警告
+$--alert-info-color: $--color-info-lighter !default;
+/// 警告警告
+$--alert-warning-color: $--color-warning-lighter !default;
+/// 危险警告
+$--alert-danger-color: $--color-danger-lighter !default;
+
