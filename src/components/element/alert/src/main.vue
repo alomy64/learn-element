@@ -1,5 +1,10 @@
 <template>
+  <!-- 过渡动画：通过 opacity 进行 显示/隐藏 切换 -->
   <Transition name="el-alert-fade">
+    <!-- alert
+      show：visible 为 true 时显示，可通过 close 方法关闭
+      class：[类型, 主题, 居中]
+     -->
     <div
       class="el-alert"
       :class="[`el-alert--${type}`, `is-${effect}`, { 'is-center': center }]"
@@ -8,14 +13,14 @@
     >
       <!-- 前置图标
         if：showIcon 为 true 时显示
-        class：图标类型（iconClass）、大小（isBigIcon）皆不同
+        class：[类型, 大图标]
        -->
       <i class="el-alert__icon" :class="[iconClass, isBigIcon]" v-if="showIcon"></i>
 
       <div class="el-alert__content">
         <!-- 标题
           if：有 props 中的 title，或具名插槽 title 时显示
-          class：若有辅助性文字，标题加粗
+          class：[标题加粗]
           Tip：二者不可共存，若如此，则只显示插槽内容
          -->
         <span class="el-alert__title" :class="[isBoldTitle]" v-if="title || $slots.title">
@@ -34,8 +39,10 @@
         <p class="el-alert__description" v-if="description && !$slots.default">{{ description }}</p>
 
         <!-- 关闭按钮
-          if：closable 为 true 时显示
+          show：closable 为 true 时显示
           class：根据 closeText 判断显示关闭按钮或者自定义文本
+          close：{图标 ×, 自定义}
+          click：通过 close 改变 visible，来控制 Alert 的 显示/隐藏
          -->
         <i
           class="el-alert__closebtn"
@@ -51,7 +58,7 @@
 </template>
 
 <script>
-// 类型对应的前置图标 clsss 的映射
+// 类型对应的前置图标 clsss 的映射 {成功, 警告, 错误}
 const TYPE_CLASS_MAP = {
   success: 'el-icon-success',
   warning: 'el-icon-warning',
@@ -99,15 +106,15 @@ export default {
   },
 
   computed: {
-    // 不同类型的前置图标 class
+    // class：不同类型的前置图标
     iconClass() {
       return TYPE_CLASS_MAP[this.type] || 'el-icon-info';
     },
-    // 是否为大前置图标 class
+    // class：是否为大前置图标
     isBigIcon() {
       return this.description || this.$slots.default ? 'is-big' : '';
     },
-    // 是否为加粗标题 class
+    // class：是否为加粗标题
     isBoldTitle() {
       return this.description || this.$slots.default ? 'is-bold' : '';
     },

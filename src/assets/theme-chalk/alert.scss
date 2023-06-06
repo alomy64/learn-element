@@ -3,7 +3,7 @@
 
 // 最外层 class
 $b: el-alert;
-// 类型映射
+// 类型映射 (成功, 警告, 错误, 信息)
 $typeMap: (
   success: (
     color: $--color-success,
@@ -38,7 +38,7 @@ $typeMap: (
   overflow: hidden;
   box-sizing: border-box;
 
-  // 关闭按钮
+  // 关闭按钮 el-alert__closebtn
   .#{$b}__closebtn {
     position: absolute;
     top: 12px;
@@ -47,7 +47,7 @@ $typeMap: (
     opacity: 1;
     cursor: pointer;
 
-    // 自定义关闭按钮
+    // 自定义关闭按钮 is-customed
     @include when(customed) {
       font-style: normal;
       font-size: $--alert-close-customed-font-size;
@@ -66,7 +66,7 @@ $typeMap: (
     font-size: $--alert-title-font-size;
     line-height: 18px;
 
-    // 加粗标题
+    // 加粗标题 is-bold
     @include when(bold) {
       font-weight: bold;
     }
@@ -83,27 +83,27 @@ $typeMap: (
     font-size: $--alert-icon-size;
     width: $--alert-icon-size;
 
-    // 大前置图标
+    // 大前置图标 is-big
     @include when(big) {
       font-size: $--alert-icon-large-size;
       width: $--alert-icon-large-size;
     }
   }
 
-  // 文字居中
+  // 文字居中 is-center
   @include when(center) {
     justify-content: center;
   }
 
-  // 亮色主题
+  // 亮色主题 is-light
   @include when(light) {
-    // 关闭按钮
+    // 关闭按钮 el-alert__closebtn
     .#{$b}__closebtn {
       color: $--color-text-placeholder;
     }
   }
 
-  // 暗色主题
+  // 暗色主题 is-dark
   @include when(dark) {
     /* 
       关闭按钮 el-alert__closebtn
@@ -117,6 +117,7 @@ $typeMap: (
 
   // 不同类型
   @each $type, $curTypeMap in $typeMap {
+    // el-alert--{type}
     @include m($type) {
       // 循环属性和属性值组成的样式映射
       @each $styleKey, $styleVal in $curTypeMap {
