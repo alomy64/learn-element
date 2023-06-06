@@ -62,7 +62,7 @@
 const TYPE_CLASS_MAP = {
   success: 'el-icon-success',
   warning: 'el-icon-warning',
-  info: 'el-icon-info',
+  error: 'el-icon-error',
 };
 
 export default {
