@@ -1,11 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import Alert from '@element/alert';
+import { shallowMount } from '@vue/test-utils';
 
 describe('Alert', () => {
-  it('create', () => {
-    function add(a, b) {
-      return a + b;
-    }
+  let wrapper;
 
-    expect(add(1, 2)).toBe(3);
+  beforeEach(() => {
+    wrapper = shallowMount(Alert);
+  });
+
+  it('create', () => {
+    expect(wrapper.classes('el-alert')).toBe(true);
   });
 });
