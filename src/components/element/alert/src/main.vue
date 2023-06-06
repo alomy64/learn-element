@@ -7,17 +7,31 @@
       role="alert"
     >
       <!-- 前置图标
-        showIcon：为 true 时，显示此
-        class：图标类型、大小皆不同
+        if：showIcon 为 true 时显示
+        class：图标类型（iconClass）、大小（isBigIcon）皆不同
        -->
-      <i class="el-alert__icon" :class="[iconClass]" v-if="showIcon"></i>
+      <i class="el-alert__icon" :class="[iconClass, isBigIcon]" v-if="showIcon"></i>
 
       <div class="el-alert__content">
-        <!-- 标题 if：有 props 中的 title，或具名插槽 title 时显示-->
-        <span class="el-alert__title" v-if="title || $slots.title">
+        <!-- 标题
+          if：有 props 中的 title，或具名插槽 title 时显示
+          class：若有辅助性文字，标题加粗
+          Tip：二者不可共存，若如此，则只显示插槽内容
+         -->
+        <span class="el-alert__title" :class="[isBoldTitle]" v-if="title || $slots.title">
           <!-- 如有具名插槽 title，则显示其内容；否则显示 props 中的 title -->
           <slot name="title">{{ title }}</slot>
         </span>
+
+        <!-- 辅助性文字介绍
+          Tip：二者不可共存，若如此，则都不显示
+         -->
+        <!-- if：有默认插槽，并且 props 中的 description 无值时，显示插槽内容 -->
+        <p class="el-alert__description" v-if="!description && $slots.default">
+          <slot></slot>
+        </p>
+        <!-- if：无默认插槽，并且 props 中的 description 有值时，显示 props 中的 description -->
+        <p class="el-alert__description" v-if="description && !$slots.default">{{ description }}</p>
 
         <!-- 关闭按钮
           if：closable 为 true 时显示
@@ -73,6 +87,8 @@ export default {
     showIcon: Boolean,
     // 关闭按钮自定义文本
     closeText: String,
+    // 辅助性文字。也可通过默认 slot 传入
+    description: String,
   },
 
   data() {
@@ -83,9 +99,17 @@ export default {
   },
 
   computed: {
-    // 前置图标 class
+    // 不同类型的前置图标 class
     iconClass() {
       return TYPE_CLASS_MAP[this.type] || 'el-icon-info';
+    },
+    // 是否为大前置图标 class
+    isBigIcon() {
+      return this.description || this.$slots.default ? 'is-big' : '';
+    },
+    // 是否为加粗标题 class
+    isBoldTitle() {
+      return this.description || this.$slots.default ? 'is-bold' : '';
     },
   },
 

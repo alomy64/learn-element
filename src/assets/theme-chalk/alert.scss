@@ -29,7 +29,6 @@ $typeMap: (
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 13px;
   background-color: $--color-white;
   margin: 0;
   padding: $--alert-padding;
@@ -44,7 +43,7 @@ $typeMap: (
     position: absolute;
     top: 12px;
     right: 15px;
-    font-size: $--alert-title-font-size;
+    font-size: $--alert-close-font-size;
     opacity: 1;
     cursor: pointer;
 
@@ -62,16 +61,33 @@ $typeMap: (
     padding: 0 8px;
   }
 
-  // el-alert__title
+  // 标题 el-alert__title
   .#{$b}__title {
     font-size: $--alert-title-font-size;
     line-height: 18px;
+
+    // 加粗标题
+    @include when(bold) {
+      font-weight: bold;
+    }
+  }
+
+  // 辅助性文字 el-alert__description
+  .#{$b}__description {
+    font-size: $--alert-description-font-size;
+    margin: 5px 0 0 0;
   }
 
   // 前置图标 el-alert__icon
   .#{$b}__icon {
     font-size: $--alert-icon-size;
     width: $--alert-icon-size;
+
+    // 大前置图标
+    @include when(big) {
+      font-size: $--alert-icon-large-size;
+      width: $--alert-icon-large-size;
+    }
   }
 
   // 文字居中
@@ -89,8 +105,12 @@ $typeMap: (
 
   // 暗色主题
   @include when(dark) {
-    // 关闭按钮
-    .#{$b}__closebtn {
+    /* 
+      关闭按钮 el-alert__closebtn
+      辅助性文字 el-alert__description
+    */
+    .#{$b}__closebtn,
+    .#{$b}__description {
       color: $--color-white;
     }
   }
@@ -103,6 +123,11 @@ $typeMap: (
         // 亮色主题
         &.is-light {
           #{$styleKey}: $styleVal;
+
+          // 辅助性文字 el-alert__description
+          .#{$b}__description {
+            color: inspect(map-get($curTypeMap, color));
+          }
         }
 
         // 暗色主题
