@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Alert />
+    <Radio />
   </div>
 </template>
 
 <script>
-import Alert from './examples/Alert.vue';
+import Radio from './examples/Radio.vue';
 
 export default {
-  components: { Alert },
+  components: { Radio },
 
   name: 'App',
 };

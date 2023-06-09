@@ -310,3 +310,36 @@ $--alert-info-color: $--color-info-lighter !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 /// 危险警告
 $--alert-danger-color: $--color-danger-lighter !default;
+
+/* Radio 单选框
+-------------------------- */
+/// 字体大小
+$--radio-font-size: $--font-size-base !default;
+/// 字体粗细
+$--radio-font-weight: $--font-weight-primary !default;
+/// 字体颜色
+$--radio-font-color: $--color-text-regular !default;
+
+// input
+/// 宽度
+$--radio-input-width: 14px !default;
+/// 高度
+$--radio-input-height: 14px !default;
+/// 背景色
+$--radio-input-background-color: $--color-white !default;
+
+// 边框 input
+/// 边框
+$--radio-input-border: $--border-base !default;
+/// 边框颜色 hover
+$--radio-input-border-color-hover: $--color-primary !default;
+/// 边框圆角
+$--radio-input-border-radius: $--border-radius-circle !default;
+
+// 选中
+/// 字体颜色
+$--radio-checked-font-color: $--color-primary !default;
+/// 边框颜色 input
+$--radio-checked-input-border-color: $--color-primary !default;
+/// 单选框颜色
+$--radio-checked-icon-color: $--color-primary !default;

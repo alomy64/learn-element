@@ -1,0 +1,106 @@
+/* Radio 单选框 */
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+@import "./mixins/utils.scss";
+
+// 最外层 class
+$b: el-radio;
+
+// el-radio
+@include b(radio) {
+  position: relative;
+  display: inline-block;
+  font-size: $--font-size-base;
+  color: $--radio-font-color;
+  font-weight: $--radio-font-weight;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // 用户不能选择文本
+  @include utils-user-select(none);
+
+  // el-radio__input
+  .#{$b}__input {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+
+    // 选中
+    @include when(checked) {
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        background-color: $--radio-checked-input-border-color;
+        background-color: $--radio-checked-icon-color;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      // 内容 el-radio__label
+      & + span.#{$b}__label {
+        color: $--radio-checked-font-color;
+      }
+    }
+  }
+
+  // 自定义单选框 el-radio__inner
+  .#{$b}__inner {
+    position: relative;
+    display: inline-block;
+    width: $--radio-input-width;
+    height: $--radio-input-height;
+    box-sizing: border-box;
+    border: $--radio-input-border;
+    border-radius: $--radio-input-border-radius;
+    background-color: $--radio-input-background-color;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $--radio-input-border-color-hover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 4px;
+      height: 4px;
+      background-color: $--color-white;
+      border-radius: $--radio-input-border-radius;
+      transition: transform 0.15s ease-in;
+    }
+  }
+
+  // 默认单选框 el-radio__original
+  .#{$b}__original {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    outline: none;
+    margin: 0;
+    z-index: -1;
+  }
+
+  // 内容 el-radio__label
+  .#{$b}__label {
+    font-size: $--radio-font-size;
+    padding-left: 10px;
+  }
+}
