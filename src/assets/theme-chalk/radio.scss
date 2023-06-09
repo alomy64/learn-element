@@ -40,7 +40,7 @@ $b: el-radio;
     @include when(checked) {
       // 自定义单选框 el-radio__inner
       .#{$b}__inner {
-        background-color: $--radio-checked-input-border-color;
+        border-color: $--radio-checked-input-border-color;
         background-color: $--radio-checked-icon-color;
 
         // 中间小点
@@ -59,8 +59,8 @@ $b: el-radio;
     @include when(disabled) {
       // 自定义单选框 el-radio__inner
       .#{$b}__inner {
-        background-color: $--radio-disabled-input-fill;
         border-color: $--radio-disabled-input-border-color;
+        background-color: $--radio-disabled-input-fill;
         cursor: not-allowed;
 
         // 中间小点
@@ -79,8 +79,8 @@ $b: el-radio;
       @include when(checked) {
         // 自定义单选框 el-radio__inner
         .#{$b}__inner {
-          background-color: $--radio-disabled-checked-input-fill;
           border-color: $--radio-disabled-checked-input-border-color;
+          background-color: $--radio-disabled-checked-input-fill;
 
           // 中间小点
           &::after {
