@@ -2,14 +2,18 @@
 <template>
   <label
     class="el-radio"
-    :class="[{ 'is-checked': model === label }]"
+    :class="[{ 'is-checked': model === label, 'is-disabled': disabled }]"
     role="radio"
     :aria-checked="model === label"
+    :aria-disabled="disabled"
   >
     <!-- input
       class：{是否选中}
      -->
-    <span class="el-radio__input" :class="{ 'is-checked': model === label }">
+    <span
+      class="el-radio__input"
+      :class="{ 'is-checked': model === label, 'is-disabled': disabled }"
+    >
       <!-- 自定义单选框 -->
       <span class="el-radio__inner"></span>
       <!-- 默认单选框 -->
@@ -20,6 +24,7 @@
         :name="name"
         :value="label"
         v-model="model"
+        :disabled="disabled"
         autocomplete="off"
         aria-hidden="true"
       />
@@ -48,6 +53,8 @@ export default {
     value: [String, Number, Boolean],
     // 原生 name 属性
     name: String,
+    // 是否禁用
+    disabled: Boolean,
   },
 
   computed: {

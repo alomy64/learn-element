@@ -43,6 +43,7 @@ $b: el-radio;
         background-color: $--radio-checked-input-border-color;
         background-color: $--radio-checked-icon-color;
 
+        // 中间小点
         &::after {
           transform: translate(-50%, -50%) scale(1);
         }
@@ -51,6 +52,47 @@ $b: el-radio;
       // 内容 el-radio__label
       & + span.#{$b}__label {
         color: $--radio-checked-font-color;
+      }
+    }
+
+    // 禁用
+    @include when(disabled) {
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        background-color: $--radio-disabled-input-fill;
+        border-color: $--radio-disabled-input-border-color;
+        cursor: not-allowed;
+
+        // 中间小点
+        &::after {
+          background-color: $--radio-disabled-icon-color;
+          cursor: not-allowed;
+        }
+
+        // 默认单选框 el-radio__original
+        & + .#{$b}__original {
+          cursor: not-allowed;
+        }
+      }
+
+      // 选中
+      @include when(checked) {
+        // 自定义单选框 el-radio__inner
+        .#{$b}__inner {
+          background-color: $--radio-disabled-checked-input-fill;
+          border-color: $--radio-disabled-checked-input-border-color;
+
+          // 中间小点
+          &::after {
+            background-color: $--radio-disabled-checked-icon-color;
+          }
+        }
+      }
+
+      // 内容 el-radio__label
+      & + span.#{$b}__label {
+        color: $--color-text-placeholder;
+        cursor: not-allowed;
       }
     }
   }
@@ -71,6 +113,7 @@ $b: el-radio;
       border-color: $--radio-input-border-color-hover;
     }
 
+    // 中间小点
     &::after {
       content: "";
       position: absolute;

@@ -350,5 +350,21 @@ $--radio-input-border-radius: $--border-radius-circle !default;
 $--radio-checked-font-color: $--color-primary !default;
 /// 边框颜色 input
 $--radio-checked-input-border-color: $--color-primary !default;
-/// 单选框颜色
+/// 背景颜色
 $--radio-checked-icon-color: $--color-primary !default;
+
+// 禁用
+/// 边框颜色
+$--radio-disabled-input-border-color: $--disabled-border-base !default;
+/// 背景颜色
+$--radio-disabled-input-fill: $--disabled-fill-base !default;
+/// 背景颜色 中间小点
+$--radio-disabled-icon-color: $--disabled-fill-base !default;
+
+// 禁用 + 选中
+/// 边框颜色
+$--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
+/// 背景颜色
+$--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
+/// 背景颜色 中间小点
+$--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
