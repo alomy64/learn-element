@@ -182,6 +182,15 @@ $--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !de
 /// 浅色投影
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
+/* Disable base 禁用
+-------------------------- */
+/// 背景颜色
+$--disabled-fill-base: $--background-color-base !default;
+/// 字体颜色
+$--disabled-color-base: $--color-text-placeholder !default;
+/// 边框颜色
+$--disabled-border-base: $--border-color-light !default;
+
 /* Button 按钮
 -------------------------- */
 /// 字体大小
