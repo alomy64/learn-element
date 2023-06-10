@@ -95,6 +95,14 @@ $b: el-radio;
         cursor: not-allowed;
       }
     }
+
+    // 聚焦 is-focus
+    @include when(focus) {
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        border-color: $--radio-input-border-color-hover;
+      }
+    }
   }
 
   // 自定义单选框 el-radio__inner
@@ -145,5 +153,16 @@ $b: el-radio;
   .#{$b}__label {
     font-size: $--radio-font-size;
     padding-left: 10px;
+  }
+
+  /* 聚焦时，样式提醒
+    1.单选框：按 Tab 键切换选项时触发
+    2.单选框组：按键盘上下左右进行选择时触发
+  */
+  &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+    // 自定义单选框 el-radio__inner
+    .#{$b}__inner {
+      box-shadow: 0 0 2px 2px $--radio-input-border-color-hover;
+    }
   }
 }

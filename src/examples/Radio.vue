@@ -2,8 +2,8 @@
   <div>
     <h1>基础用法</h1>
     <div>
-      <el-radio v-model="radio" label="1">备选项</el-radio>
-      <el-radio v-model="radio" label="2">备选项</el-radio>
+      <el-radio v-model="radio" label="1" @change="handleChange">备选项</el-radio>
+      <el-radio v-model="radio" label="2" @change="handleChange">备选项</el-radio>
     </div>
 
     <h1>禁用状态</h1>
@@ -23,6 +23,13 @@ export default {
       // 禁用状态
       disabledRadio: '选中且禁用',
     };
+  },
+
+  methods: {
+    // change 事件
+    handleChange(val) {
+      console.log(val);
+    },
   },
 };
 </script>
