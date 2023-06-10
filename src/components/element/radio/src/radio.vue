@@ -4,6 +4,10 @@
     class：[尺寸, {选中, 禁用, 聚焦, 边框}]
     aria-checked：v-model 绑定的变量和 props 中的 label 内容一致时选中（无障碍）
     aria-disabled：props 中的 disable 为 true 时禁用（无障碍）
+    tabindex：根据 tabIndex 判断元素是否可以聚焦 以及 参与顺序键盘导航
+    @keydown：
+      阻止空格键按下事件继续传播, 且阻止默认行为
+      若单选框为禁用状态, model 值不变; 否则即为选中, model 与 label 相同
    -->
   <label
     class="el-radio"
@@ -11,14 +15,16 @@
       border && radioSize ? `el-radio--${radioSize}` : '',
       {
         'is-checked': model === label,
-        'is-disabled': disabled,
+        'is-disabled': isDisabled,
         'is-focus': focus,
         'is-bordered': border,
       },
     ]"
     role="radio"
     :aria-checked="model === label"
-    :aria-disabled="disabled"
+    :aria-disabled="isDisabled"
+    :tabindex="tabIndex"
+    @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <!-- input
       class：[{选中, 禁用, 聚焦}]
@@ -27,7 +33,7 @@
       class="el-radio__input"
       :class="{
         'is-checked': model === label,
-        'is-disabled': disabled,
+        'is-disabled': isDisabled,
         'is-focus': focus,
       }"
     >
@@ -39,6 +45,7 @@
         v-model：value 和 input 的结合
         disabled：disable 为 true 时禁用
         aria-hidden：从无障碍树上移除（无障碍）
+        tabindex：元素可聚焦, 但不能通过键盘导航来访问到该元素
         @focus：聚焦时，即选中时，focus 为 true
         @blur：失去焦点时，focus 为 false
         @change：响应变化，向父组件传递 model 的值
@@ -50,9 +57,10 @@
         :name="name"
         :value="label"
         v-model="model"
-        :disabled="disabled"
+        :disabled="isDisabled"
         autocomplete="off"
         aria-hidden="true"
+        tabindex="-1"
         @focus="focus = true"
         @blur="focus = false"
         @change="handleChange"
@@ -109,11 +117,28 @@ export default {
       },
       set(val) {
         this.$emit('input', val);
+
+        // 确保默认单选框的 checked 状态为最新状态
+        this.$nextTick(() => {
+          this.$refs.radio && (this.$refs.radio.checked = this.model === this.label);
+        });
       },
+    },
+    // 是否禁用
+    isDisabled() {
+      return this.disabled;
     },
     // 尺寸
     radioSize() {
       return this.size;
+    },
+    /**
+     * 表示元素是否可以聚焦, 以及它 是否/在何处 参与顺序键盘导航 (通常使用 Tab 键)
+     * -1: 可聚焦, 但是不能通过键盘导航来访问到该元素
+     *  0: 可聚焦, 并且可以通过键盘导航来聚焦到该元素
+     */
+    tabIndex() {
+      return this.isDisabled ? -1 : 0;
     },
   },
 
