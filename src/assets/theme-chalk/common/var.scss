@@ -368,3 +368,28 @@ $--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
 /// 背景颜色 中间小点
 $--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
+
+// 边框
+/// 高度
+$--radio-bordered-height: 40px !default;
+/// 内间距
+$--radio-bordered-padding: 12px 20px 0 10px !default;
+
+// 单选框尺寸 (内间距、input 宽度、input 高度、高度)
+/// 中等
+$--radio-bordered-medium-padding: 10px 20px 0 10px !default;
+$--radio-bordered-medium-input-width: 14px !default;
+$--radio-bordered-medium-input-height: 14px !default;
+$--radio-bordered-medium-height: 36px !default;
+
+/// 小型
+$--radio-bordered-small-padding: 8px 15px 0 10px !default;
+$--radio-bordered-small-input-width: 12px !default;
+$--radio-bordered-small-input-height: 12px !default;
+$--radio-bordered-small-height: 32px !default;
+
+/// 超小
+$--radio-bordered-mini-padding: 6px 15px 0 10px !default;
+$--radio-bordered-mini-input-width: 12px !default;
+$--radio-bordered-mini-input-height: 12px !default;
+$--radio-bordered-mini-height: 28px !default;

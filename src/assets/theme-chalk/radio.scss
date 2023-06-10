@@ -26,6 +26,94 @@ $b: el-radio;
   // 用户不能选择文本
   @include utils-user-select(none);
 
+  // 边框 is-border
+  @include when(bordered) {
+    height: $--radio-bordered-height;
+    border: $--border-base;
+    border-radius: $--border-radius-base;
+    padding: $--radio-bordered-padding;
+    box-sizing: border-box;
+
+    // 边框 + 选中 is-checked
+    @include when(checked) {
+      border-color: $--color-primary;
+    }
+
+    // 边框 + 禁用 is-disabled
+    @include when(disabled) {
+      border-color: $--border-color-lighter;
+      cursor: not-allowed;
+    }
+
+    // 相邻单选框且有边框
+    & + .el-radio.is-bordered {
+      margin-left: 10px;
+    }
+  }
+
+  // 中等尺寸
+  @include m(medium) {
+    // 中等尺寸 + 边框
+    @include when(bordered) {
+      height: $--radio-bordered-medium-height;
+      border-radius: $--button-medium-border-radius;
+      padding: $--radio-bordered-medium-padding;
+
+      // 内容 el-radio__label
+      .#{$b}__label {
+        font-size: $--button-medium-font-size;
+      }
+
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        width: $--radio-bordered-medium-input-width;
+        height: $--radio-bordered-medium-input-height;
+      }
+    }
+  }
+
+  // 小型尺寸
+  @include m(small) {
+    // 小型尺寸 + 边框
+    @include when(bordered) {
+      height: $--radio-bordered-small-height;
+      border-radius: $--button-small-border-radius;
+      padding: $--radio-bordered-small-padding;
+
+      // 内容 el-radio__label
+      .#{$b}__label {
+        font-size: $--button-small-font-size;
+      }
+
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        width: $--radio-bordered-small-input-width;
+        height: $--radio-bordered-small-input-height;
+      }
+    }
+  }
+
+  // 超小尺寸
+  @include m(mini) {
+    // 超小尺寸 + 边框
+    @include when(bordered) {
+      height: $--radio-bordered-mini-height;
+      border-radius: $--button-mini-border-radius;
+      padding: $--radio-bordered-mini-padding;
+
+      // 内容 el-radio__label
+      .#{$b}__label {
+        font-size: $--button-mini-font-size;
+      }
+
+      // 自定义单选框 el-radio__inner
+      .#{$b}__inner {
+        width: $--radio-bordered-mini-input-width;
+        height: $--radio-bordered-mini-input-height;
+      }
+    }
+  }
+
   // el-radio__input
   .#{$b}__input {
     position: relative;

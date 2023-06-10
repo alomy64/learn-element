@@ -1,17 +1,19 @@
 <!-- Radio 单选框 -->
 <template>
   <!-- label
-    class：[{选中, 禁用, 聚焦}]
+    class：[尺寸, {选中, 禁用, 聚焦, 边框}]
     aria-checked：v-model 绑定的变量和 props 中的 label 内容一致时选中（无障碍）
     aria-disabled：props 中的 disable 为 true 时禁用（无障碍）
    -->
   <label
     class="el-radio"
     :class="[
+      border && radioSize ? `el-radio--${radioSize}` : '',
       {
         'is-checked': model === label,
         'is-disabled': disabled,
         'is-focus': focus,
+        'is-bordered': border,
       },
     ]"
     role="radio"
@@ -83,6 +85,13 @@ export default {
     name: String,
     // 是否禁用
     disabled: Boolean,
+    // 是否显示边框
+    border: Boolean,
+    // Radio 的尺寸，仅在 border 为真时有效
+    size: {
+      type: String,
+      validator: (val) => ['medium', 'small', 'mini'].includes(val),
+    },
   },
 
   data() {
@@ -101,6 +110,10 @@ export default {
       set(val) {
         this.$emit('input', val);
       },
+    },
+    // 尺寸
+    radioSize() {
+      return this.size;
     },
   },
 
