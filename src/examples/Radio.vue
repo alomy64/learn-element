@@ -2,8 +2,12 @@
   <div>
     <h1>基础用法</h1>
     <div>
-      <el-radio v-model="radio" label="1" @change="handleChange">备选项</el-radio>
-      <el-radio v-model="radio" label="2" @change="handleChange">备选项</el-radio>
+      <el-radio v-model="radio" label="1" @change="handleChange" @input="handleInput"
+        >备选项</el-radio
+      >
+      <el-radio v-model="radio" label="2" @change="handleChange" @input="handleInput"
+        >备选项</el-radio
+      >
     </div>
 
     <h1>禁用状态</h1>
@@ -71,9 +75,19 @@ export default {
   },
 
   methods: {
-    // change 事件
+    /**
+     * change 事件
+     * @param {*} val 选中的 Radio label 值
+     */
     handleChange(val) {
-      console.log(val);
+      console.log('change', val);
+    },
+    /**
+     * 绑定值变化时触发的事件
+     * @param {*} val 选中的 Radio label 值
+     */
+    handleInput(val) {
+      console.log('input', val);
     },
   },
 };

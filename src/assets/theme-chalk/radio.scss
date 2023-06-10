@@ -244,8 +244,8 @@ $b: el-radio;
   }
 
   /* 聚焦时，样式提醒
-    1.单选框：按 Tab 键切换选项时触发
-    2.单选框组：按键盘上下左右进行选择时触发
+    1.单选框: 按 Tab 键切换选项时触发
+    2.单选框组: 按键盘上下左右进行选择时触发
   */
   &:focus:not(.is-focus):not(:active):not(.is-disabled) {
     // 自定义单选框 el-radio__inner

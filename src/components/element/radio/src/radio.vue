@@ -1,11 +1,11 @@
 <!-- Radio 单选框 -->
 <template>
   <!-- label
-    class：[尺寸, {选中, 禁用, 聚焦, 边框}]
-    aria-checked：v-model 绑定的变量和 props 中的 label 内容一致时选中（无障碍）
-    aria-disabled：props 中的 disable 为 true 时禁用（无障碍）
-    tabindex：根据 tabIndex 判断元素是否可以聚焦 以及 参与顺序键盘导航
-    @keydown：
+    class: [尺寸, {选中, 禁用, 聚焦, 边框}]
+    aria-checked: v-model 绑定的变量和 props 中的 label 内容一致时选中（无障碍）
+    aria-disabled: props 中的 disable 为 true 时禁用（无障碍）
+    tabindex: 根据 tabIndex 判断元素是否可以聚焦 以及 参与顺序键盘导航
+    @keydown:
       阻止空格键按下事件继续传播, 且阻止默认行为
       若单选框为禁用状态, model 值不变; 否则即为选中, model 与 label 相同
    -->
@@ -27,7 +27,7 @@
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <!-- input
-      class：[{选中, 禁用, 聚焦}]
+      class: [{选中, 禁用, 聚焦}]
      -->
     <span
       class="el-radio__input"
@@ -40,15 +40,15 @@
       <!-- 自定义单选框 -->
       <span class="el-radio__inner"></span>
       <!-- 默认单选框
-        ref：可通过 $refs.radio 获取 DOM 节点
-        name：多个相同 name 的单选框为一组
-        v-model：value 和 input 的结合
-        disabled：disable 为 true 时禁用
-        aria-hidden：从无障碍树上移除（无障碍）
-        tabindex：元素可聚焦, 但不能通过键盘导航来访问到该元素
-        @focus：聚焦时，即选中时，focus 为 true
-        @blur：失去焦点时，focus 为 false
-        @change：响应变化，向父组件传递 model 的值
+        ref: 可通过 $refs.radio 获取 DOM 节点
+        name: 多个相同 name 的单选框为一组
+        v-model: value 和 input 的结合
+        disabled: disable 为 true 时禁用
+        aria-hidden: 从无障碍树上移除（无障碍）
+        tabindex: 元素可聚焦, 但不能通过键盘导航来访问到该元素
+        @focus: 聚焦时，即选中时，focus 为 true
+        @blur: 失去焦点时，focus 为 false
+        @change: 响应变化，向父组件传递 model 的值
        -->
       <input
         ref="radio"
@@ -68,13 +68,13 @@
     </span>
 
     <!-- 内容
-      @keydown.stop：阻止键盘按下事件继续传播
-      Tip：二者不可共存，若如此，则只显示插槽内容
+      @keydown.stop: 阻止键盘按下事件继续传播
+      Tip: 二者不可共存，若如此，则只显示插槽内容
      -->
     <span class="el-radio__label" @keydown.stop>
       <!-- 若有默认插槽，则显示插槽内容 -->
       <slot></slot>
-      <!-- if：若无默认插槽，则显示 props 的 label  -->
+      <!-- if: 若无默认插槽，则显示 props 的 label  -->
       <template v-if="!$slots.default">{{ label }}</template>
     </span>
   </label>
