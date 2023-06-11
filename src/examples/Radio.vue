@@ -24,6 +24,15 @@
       <el-radio v-model="sizeRadio" label="4" border size="mini">超小</el-radio>
     </div>
 
+    <h1>单选框组</h1>
+    <div>
+      <el-radio-group v-model="groupRadio" @input="handleInput">
+        <el-radio :label="3">备选项</el-radio>
+        <el-radio :label="6">备选项</el-radio>
+        <el-radio :label="9">备选项</el-radio>
+      </el-radio-group>
+    </div>
+
     <h1>带有边框</h1>
     <div>
       <!-- 边框 -->
@@ -65,6 +74,8 @@ export default {
       disabledRadio: '选中且禁用',
       // 不同尺寸
       sizeRadio: '1',
+      // 单选框组
+      groupRadio: 3,
 
       /* 带有边框 */
       borderRadio1: '1',

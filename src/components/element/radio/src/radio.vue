@@ -81,8 +81,12 @@
 </template>
 
 <script>
+import Emitter from '@/mixins/element/emitter';
+
 export default {
   name: 'ElRadio',
+
+  mixins: [Emitter],
 
   props: {
     // Radio 的 value
@@ -110,15 +114,48 @@ export default {
   },
 
   computed: {
+    // 父组件/祖先组件 是否为单选框组
+    isGroup() {
+      let parent = this.$parent;
+
+      while (parent) {
+        if (parent.$options.componentName !== 'ElRadioGroup') {
+          parent = parent.$parent;
+        } else {
+          this._radioGroup = parent;
+
+          return true;
+        }
+      }
+
+      return false;
+    },
     // v-model 绑定
     model: {
+      /**
+       * 获取绑定的值
+       * @return {*} 绑定的值
+       */
       get() {
-        return this.value;
+        // 如果是单选框组, 则使用单选框组的 value; 否则使用此单选框的 value
+        return this.isGroup ? this._radioGroup.value : this.value;
       },
+      /**
+       * 设置绑定的值
+       * @param {*} val 要设置的新值
+       */
       set(val) {
-        this.$emit('input', val);
+        // 判断是否为单选框组
+        if (this.isGroup) {
+          this.dispatch('ElRadioGroup', 'input', [val]);
+        } else {
+          this.$emit('input', val);
+        }
 
-        // 确保默认单选框的 checked 状态为最新状态
+        /**
+         * 确保默认单选框的 checked 状态为最新状态
+         * ??? 源码中没未使用 $nextTick, 值总为 false, 不止是否有意为之
+         */
         this.$nextTick(() => {
           this.$refs.radio && (this.$refs.radio.checked = this.model === this.label);
         });
@@ -145,7 +182,7 @@ export default {
   methods: {
     // change 事件
     handleChange() {
-      // 使用 nextTick 确保传给父组件的值为最新值
+      // 使用 $nextTick 确保传给父组件的值为最新值
       this.$nextTick(() => {
         this.$emit('change', this.model);
       });

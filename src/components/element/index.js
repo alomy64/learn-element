@@ -11,6 +11,7 @@ import ButtonGroup from '@element/button-group';
 import Link from '@element/link';
 import Alert from '@element/alert';
 import Radio from '@element/radio';
+import RadioGroup from '@element/radio-group';
 
 const components = [Row, Col];
 
@@ -35,6 +36,7 @@ export default {
   Link,
   Alert,
   Radio,
+  RadioGroup,
 };
 
 export {
@@ -52,4 +54,5 @@ export {
   Link,
   Alert,
   Radio,
+  RadioGroup,
 };
