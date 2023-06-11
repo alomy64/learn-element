@@ -18,6 +18,14 @@ export default {
     value: [String, Number, Boolean],
   },
 
+  created() {
+    // 监听 handleChange 事件, 并接收到传递的绑定值 model
+    this.$on('handleChange', (value) => {
+      // 向父组件触发 change 事件, 并传递绑定值 model
+      this.$emit('change', value);
+    });
+  },
+
   computed: {
     // 要渲染的组件名
     _elTag() {

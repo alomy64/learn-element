@@ -185,6 +185,12 @@ export default {
       // 使用 $nextTick 确保传给父组件的值为最新值
       this.$nextTick(() => {
         this.$emit('change', this.model);
+        /**
+         * 如果是单选框组, 则向上找到 ElRadioGroup 组件
+         * ElRadioGroup 组件会通过 $emit 触发事件 handleChange, 并将绑定值 model 一并传递
+         * 可在 ElRadioGroup 组件中通过 $on 监听此事件, 并接收参数
+         */
+        this.isGroup && this.dispatch('ElRadioGroup', 'handleChange', this.model);
       });
     },
   },

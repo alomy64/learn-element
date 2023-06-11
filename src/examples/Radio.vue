@@ -26,7 +26,7 @@
 
     <h1>单选框组</h1>
     <div>
-      <el-radio-group v-model="groupRadio" @input="handleInput">
+      <el-radio-group v-model="groupRadio" @change="handleChange" @input="handleInput">
         <el-radio :label="3">备选项</el-radio>
         <el-radio :label="6">备选项</el-radio>
         <el-radio :label="9">备选项</el-radio>
@@ -87,7 +87,7 @@ export default {
 
   methods: {
     /**
-     * change 事件
+     * change 事件, 相应变化
      * @param {*} val 选中的 Radio label 值
      */
     handleChange(val) {
