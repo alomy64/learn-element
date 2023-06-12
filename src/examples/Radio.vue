@@ -26,7 +26,15 @@
 
     <h1>单选框组</h1>
     <div>
+      <h3>基础用法，可通过键盘 上下左右 进行选择</h3>
       <el-radio-group v-model="groupRadio" @change="handleChange" @input="handleInput">
+        <el-radio :label="3">备选项</el-radio>
+        <el-radio :label="6">备选项</el-radio>
+        <el-radio :label="9">备选项</el-radio>
+      </el-radio-group>
+
+      <h3>无默认选项时，可通过 Tab 聚焦首项, 空格选择</h3>
+      <el-radio-group v-model="groupRadio2" @change="handleChange" @input="handleInput">
         <el-radio :label="3">备选项</el-radio>
         <el-radio :label="6">备选项</el-radio>
         <el-radio :label="9">备选项</el-radio>
@@ -78,6 +86,7 @@ export default {
       sizeRadio: '1',
       // 单选框组
       groupRadio: 3,
+      groupRadio2: 33,
 
       /* 带有边框 */
       borderRadio1: '1',
