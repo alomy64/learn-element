@@ -34,6 +34,16 @@ export default {
       type: String,
       validator: (val) => ['medium', 'small', 'mini'].includes(val),
     },
+    // 按钮形式的 Radio 激活时的文本颜色
+    textColor: {
+      type: String,
+      default: '#ffffff',
+    },
+    // 按钮形式的 Radio 激活时的填充色和边框色
+    fill: {
+      type: String,
+      default: '#409EFF',
+    },
   },
 
   created() {
