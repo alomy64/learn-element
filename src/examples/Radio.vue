@@ -47,19 +47,21 @@
         <el-radio v-model="borderRadio2" label="2" border disabled>备选项2</el-radio>
       </div>
 
-      <!-- TODO 边框 + 单选框组 -->
-      <!-- <div style="margin-top: 20px">
+      <!-- 边框 + 单选框组 + 尺寸 -->
+      <div style="margin-top: 20px">
         <el-radio-group v-model="borderRadio3" size="small">
           <el-radio label="1" border>备选项1</el-radio>
           <el-radio label="2" border disabled>备选项2</el-radio>
         </el-radio-group>
       </div>
+
+      <!-- 边框 + 单选框组 + 尺寸 + 禁用 -->
       <div style="margin-top: 20px">
         <el-radio-group v-model="borderRadio4" size="mini" disabled>
           <el-radio label="1" border>备选项1</el-radio>
           <el-radio label="2" border>备选项2</el-radio>
         </el-radio-group>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>

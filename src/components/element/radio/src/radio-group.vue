@@ -16,6 +16,13 @@ export default {
   props: {
     // 绑定值
     value: [String, Number, Boolean],
+    // 是否禁用
+    disabled: Boolean,
+    // 单选框组尺寸, 仅对按钮形式的 Radio 或带有边框的 Radio 有效
+    size: {
+      type: String,
+      validator: (val) => ['medium', 'small', 'mini'].includes(val),
+    },
   },
 
   created() {
@@ -35,6 +42,10 @@ export default {
       if (!tag || tag === 'component') tag = 'div';
 
       return tag;
+    },
+    // 尺寸
+    radioGroupSize() {
+      return this.size;
     },
   },
 };

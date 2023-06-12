@@ -163,11 +163,15 @@ export default {
     },
     // 是否禁用
     isDisabled() {
-      return this.disabled;
+      const temRadioDisabled = this.disabled;
+
+      return this.isGroup ? this._radioGroup.disabled || temRadioDisabled : temRadioDisabled;
     },
     // 尺寸
     radioSize() {
-      return this.size;
+      const temRadioSize = this.size;
+
+      return this.isGroup ? this._radioGroup.radioGroupSize || temRadioSize : temRadioSize;
     },
     /**
      * 表示元素是否可以聚焦, 以及它 是否/在何处 参与顺序键盘导航 (通常使用 Tab 键)
