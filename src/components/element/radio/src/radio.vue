@@ -179,7 +179,11 @@ export default {
      *  0: 可聚焦, 并且可以通过键盘导航来聚焦到该元素
      */
     tabIndex() {
-      return this.isDisabled ? -1 : 0;
+      /**
+       * 1.若单选框禁用, 则不能键盘导航
+       * 2.若是单选框组, 且非选中此单选框, 也不能键盘导航。即可使用 Tab 导航到被选中的单选框
+       */
+      return this.isDisabled || (this.isGroup && this.model !== this.label) ? -1 : 0;
     },
   },
 
