@@ -1,0 +1,10 @@
+/* radio-group 单选框组 */
+@import "./mixins/mixins.scss";
+
+// el-radio-group
+@include b(radio-group) {
+  display: inline-block;
+  font-size: 0;
+  line-height: 1;
+  vertical-align: middle;
+}

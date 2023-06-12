@@ -1,4 +1,4 @@
-<!-- radio-group 单选框 -->
+<!-- radio-group 单选框组 -->
 <template>
   <!-- component 用于渲染动态组件或元素
     is: 要渲染的实际组件, 既可以是 HTML 标签名也可以是组件的注册名
