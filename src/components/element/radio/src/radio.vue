@@ -4,6 +4,7 @@
     class: [尺寸, {选中, 禁用, 聚焦, 边框}]
     aria-checked: v-model 绑定的变量和 props 中的 label 内容一致时选中（无障碍）
     aria-disabled: props 中的 disable 为 true 时禁用（无障碍）
+    aria-disabled: props 中的 disable 为 true 时禁用 (无障碍) 或其他情况下禁用, 详见 isDisabled
     tabindex: 根据 tabIndex 判断元素是否可以聚焦 以及 参与顺序键盘导航
     @keydown:
       阻止空格键按下事件继续传播, 且阻止默认行为
@@ -43,7 +44,7 @@
         ref: 可通过 $refs.radio 获取 DOM 节点
         name: 多个相同 name 的单选框为一组
         v-model: value 和 input 的结合
-        disabled: disable 为 true 时禁用
+        disabled: props 中的 disable 为 true 时禁用或其他情况下禁用, 详见 isDisabled
         aria-hidden: 从无障碍树上移除（无障碍）
         tabindex: 元素可聚焦, 但不能通过键盘导航来访问到该元素
         @focus: 聚焦时，即选中时，focus 为 true
@@ -161,7 +162,10 @@ export default {
         });
       },
     },
-    // 是否禁用
+    /**
+     * 是否禁用
+     * @return {boolean} 禁用 => true 不禁用 => false
+     */
     isDisabled() {
       const temRadioDisabled = this.disabled;
 
