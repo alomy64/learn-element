@@ -1,0 +1,167 @@
+/* radio-button 单选按钮 */
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+@import "./mixins/_button.scss";
+
+// 最外层 class
+$b: el-radio-button;
+
+// el-radio-button
+@include b(radio-button) {
+  position: relative;
+  display: inline-block;
+  outline: none;
+
+  // 内容 el-radio-button__inner
+  .#{$b}__inner {
+    position: relative;
+    display: inline-block;
+    color: $--button-default-font-color;
+    font-weight: $--button-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1;
+    border: $--border-base;
+    border-left: 0;
+    outline: none;
+    background-color: $--button-default-background-color;
+    margin: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: $--all-transition;
+    box-sizing: border-box;
+
+    // 尺寸
+    @include button-size(
+      $--button-padding-vertical,
+      $--button-padding-horizontal,
+      $--button-font-size,
+      0
+    );
+
+    // 图标和文字间距
+    & [class*="el-icon-"] {
+      line-height: 0.9;
+
+      & + span {
+        margin-left: 5px;
+      }
+    }
+
+    &:hover {
+      color: $--color-primary;
+    }
+  }
+
+  &:first-child {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      border-left: $--border-base;
+      border-radius: $--border-radius-base 0 0 $--border-radius-base;
+      // box-shadow: none !important;
+    }
+  }
+
+  &:last-child {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      border-radius: 0 $--border-radius-base $--border-radius-base 0;
+    }
+  }
+
+  // 仅有一个单选按钮
+  &:first-child:last-child {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      border-radius: $--border-radius-base;
+    }
+  }
+
+  // 默认单选框 el-radio-button__orig-radio
+  .#{$b}__orig-radio {
+    position: absolute;
+    opacity: 0;
+    outline: none;
+    z-index: -1;
+
+    // 选中
+    &:checked {
+      // 相邻的内容 el-radio-button__inner
+      & + .#{$b}__inner {
+        color: $--radio-button-checked-font-color;
+        border-color: $--radio-button-checked-border-color;
+        background-color: $--radio-button-checked-background-color;
+        box-shadow: -1px 0 0 0 $--radio-button-checked-border-color;
+      }
+    }
+
+    // 禁用
+    &:disabled {
+      // 相邻的内容 el-radio-button__inner
+      & + .#{$b}__inner {
+        color: $--button-disabled-font-color;
+        border-color: $--button-disabled-border-color;
+        background-color: $--button-disabled-background-color;
+        background-image: none;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      // 禁用 + 选中 相邻的内容 el-radio-button__inner
+      &:checked + .#{$b}__inner {
+        background-color: $--radio-button-disabled-checked-fill;
+      }
+    }
+  }
+
+  // 中等
+  @include m(medium) {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      // 尺寸
+      @include button-size(
+        $--button-medium-padding-vertical,
+        $--button-medium-padding-horizontal,
+        $--button-medium-font-size,
+        0
+      );
+    }
+  }
+
+  // 小型
+  @include m(small) {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      // 尺寸
+      @include button-size(
+        $--button-small-padding-vertical,
+        $--button-small-padding-horizontal,
+        $--button-small-font-size,
+        0
+      );
+    }
+  }
+
+  // 超小
+  @include m(mini) {
+    // 内容 el-radio-button__inner
+    .#{$b}__inner {
+      // 尺寸
+      @include button-size(
+        $--button-mini-padding-vertical,
+        $--button-mini-padding-horizontal,
+        $--button-mini-font-size,
+        0
+      );
+    }
+  }
+
+  /* 聚焦时，样式提醒
+    1.单选按钮: 按 Tab 键切换选项时触发
+    2.单选框组: 按键盘上下左右进行选择时触发
+  */
+  &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+    box-shadow: 0 0 2px 2px $--radio-button-checked-border-color;
+  }
+}

@@ -45,6 +45,11 @@ $--breakpoints-spec: (
   "xl-only": (min-width: $--xl)
 );
 
+/* Transition 动画
+-------------------------- */
+/// 应用于所有更改的属性
+$--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+
 /* Header
 -------------------------- */
 $--header-padding: 0 20px !default;
@@ -393,3 +398,16 @@ $--radio-bordered-mini-padding: 6px 15px 0 10px !default;
 $--radio-bordered-mini-input-width: 12px !default;
 $--radio-bordered-mini-input-height: 12px !default;
 $--radio-bordered-mini-height: 28px !default;
+
+// 单选按钮
+// 选中
+/// 字体颜色
+$--radio-button-checked-font-color: $--color-white !default;
+/// 边框颜色
+$--radio-button-checked-border-color: $--color-primary !default;
+/// 背景颜色
+$--radio-button-checked-background-color: $--color-primary !default;
+
+// 选中 + 禁用
+/// 背景颜色
+$--radio-button-disabled-checked-fill: $--border-color-extra-light !default;

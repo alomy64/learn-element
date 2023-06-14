@@ -41,6 +41,77 @@
       </el-radio-group>
     </div>
 
+    <h1>按钮样式</h1>
+    <div>
+      <!-- 按钮 + 单选框组 -->
+      <div>
+        <el-radio-group v-model="buttonRadio1">
+          <el-radio-button label="上海"></el-radio-button>
+          <el-radio-button label="北京"></el-radio-button>
+          <el-radio-button label="广州"></el-radio-button>
+          <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+      </div>
+
+      <!-- 按钮 + 单选框组 + 文本颜色 + 填充色 + 边框色 -->
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="buttonRadio2" text-color="red" fill="#6666">
+          <el-radio-button label="上海"></el-radio-button>
+          <el-radio-button label="北京"></el-radio-button>
+          <el-radio-button label="广州"></el-radio-button>
+          <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+      </div>
+
+      <!-- 按钮 + 单选框组 + 尺寸 -->
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="buttonRadio3" size="medium">
+          <el-radio-button label="上海"></el-radio-button>
+          <el-radio-button label="北京"></el-radio-button>
+          <el-radio-button label="广州"></el-radio-button>
+          <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+      </div>
+
+      <!-- 按钮 + 单选框组 + 尺寸 + 局部禁用-->
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="buttonRadio4" size="small">
+          <el-radio-button label="上海"></el-radio-button>
+          <el-radio-button label="北京" disabled></el-radio-button>
+          <el-radio-button label="广州"></el-radio-button>
+          <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+      </div>
+
+      <!-- 按钮 + 单选框组 + 全部禁用 + 尺寸 -->
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="buttonRadio5" disabled size="mini">
+          <el-radio-button label="上海"></el-radio-button>
+          <el-radio-button label="北京"></el-radio-button>
+          <el-radio-button label="广州"></el-radio-button>
+          <el-radio-button label="深圳"></el-radio-button>
+        </el-radio-group>
+      </div>
+
+      <!-- 按钮 + 单选框组 + 图标 -->
+      <div style="margin-top: 20px">
+        <el-radio-group v-model="buttonRadio6">
+          <el-radio-button label="add">
+            <i class="el-icon-edit el-icon--left"></i>编辑
+          </el-radio-button>
+          <el-radio-button label="delete" disabled>
+            <i class="el-icon-delete el-icon--left"></i>删除
+          </el-radio-button>
+          <el-radio-button label="upload">
+            上传<i class="el-icon-upload el-icon--right"></i>
+          </el-radio-button>
+          <el-radio-button label="share">
+            分享<i class="el-icon-share el-icon--right"></i>
+          </el-radio-button>
+        </el-radio-group>
+      </div>
+    </div>
+
     <h1>带有边框</h1>
     <div>
       <!-- 边框 -->
@@ -84,9 +155,18 @@ export default {
       disabledRadio: '选中且禁用',
       // 不同尺寸
       sizeRadio: '1',
-      // 单选框组
+
+      /* 单选框组 */
       groupRadio: 3,
       groupRadio2: 33,
+
+      /* 单选按钮 */
+      buttonRadio1: '上海',
+      buttonRadio2: '上海',
+      buttonRadio3: '上海',
+      buttonRadio4: '上海',
+      buttonRadio5: '上海',
+      buttonRadio6: 'add',
 
       /* 带有边框 */
       borderRadio1: '1',

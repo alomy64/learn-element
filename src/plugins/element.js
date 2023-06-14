@@ -23,6 +23,7 @@ import {
   Alert,
   Radio,
   RadioGroup,
+  RadioButton,
 } from '@element';
 
 Vue.use(Row);
@@ -39,3 +40,4 @@ Vue.use(Link);
 Vue.use(Alert);
 Vue.use(Radio);
 Vue.use(RadioGroup);
+Vue.use(RadioButton);
