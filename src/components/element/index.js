@@ -13,6 +13,7 @@ import Alert from '@element/alert';
 import Radio from '@element/radio';
 import RadioGroup from '@element/radio-group';
 import RadioButton from '@element/radio-button';
+import Checkbox from '@element/checkbox';
 
 const components = [Row, Col];
 
@@ -39,6 +40,7 @@ export default {
   Radio,
   RadioGroup,
   RadioButton,
+  Checkbox,
 };
 
 export {
@@ -58,4 +60,5 @@ export {
   Radio,
   RadioGroup,
   RadioButton,
+  Checkbox,
 };

@@ -28,7 +28,7 @@
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <!-- input
-      class: [{选中, 禁用, 聚焦}]
+      class: {选中, 禁用, 聚焦}
      -->
     <span
       class="el-radio__input"
@@ -43,7 +43,6 @@
       <!-- 默认单选框
         ref: 可通过 $refs.radio 获取 DOM 节点
         name: 多个相同 name 的单选框为一组
-        v-model: value 和 input 的结合
         disabled: props 中的 disable 为 true 时禁用或其他情况下禁用, 详见 isDisabled
         aria-hidden: 从无障碍树上移除（无障碍）
         tabindex: 元素可聚焦, 但不能通过键盘导航来访问到该元素

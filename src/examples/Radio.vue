@@ -178,7 +178,7 @@ export default {
 
   methods: {
     /**
-     * change 事件, 相应变化
+     * change 事件, 响应变化
      * @param {*} val 选中的 Radio label 值
      */
     handleChange(val) {

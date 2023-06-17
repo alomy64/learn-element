@@ -24,6 +24,7 @@ import {
   Radio,
   RadioGroup,
   RadioButton,
+  Checkbox,
 } from '@element';
 
 Vue.use(Row);
@@ -41,3 +42,4 @@ Vue.use(Alert);
 Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(RadioButton);
+Vue.use(Checkbox);

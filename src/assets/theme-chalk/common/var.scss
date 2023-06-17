@@ -50,6 +50,10 @@ $--breakpoints-spec: (
 /// 应用于所有更改的属性
 $--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
 
+/* z-index 堆叠层级
+-------------------------- */
+$--index-normal: 1 !default;
+
 /* Header
 -------------------------- */
 $--header-padding: 0 20px !default;
@@ -120,6 +124,10 @@ $--border-color-extra-light: #f2f6fc !default;
 // 背景
 /// 基础背景色
 $--background-color-base: #f5f7fa !default;
+
+/* Fill 填充色
+-------------------------- */
+$--fill-base: $--color-white !default;
 
 /* Typography 字体
 -------------------------- */
@@ -334,7 +342,7 @@ $--radio-font-weight: $--font-weight-primary !default;
 /// 字体颜色
 $--radio-font-color: $--color-text-regular !default;
 
-// input
+// 自定义单选框
 /// 宽度
 $--radio-input-width: 14px !default;
 /// 高度
@@ -411,3 +419,36 @@ $--radio-button-checked-background-color: $--color-primary !default;
 // 选中 + 禁用
 /// 背景颜色
 $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
+
+/* Checkbox 多选框
+-------------------------- */
+/// 字体大小
+$--checkbox-font-size: 14px !default;
+/// 字体粗细
+$--checkbox-font-weight: $--font-weight-primary !default;
+/// 字体颜色
+$--checkbox-font-color: $--color-text-regular !default;
+
+// 选中
+/// 字体颜色
+$--checkbox-checked-font-color: $--color-primary !default;
+/// 边框颜色
+$--checkbox-checked-input-border-color: $--color-primary !default;
+/// 背景颜色
+$--checkbox-checked-background-color: $--color-primary !default;
+/// 图标颜色
+$--checkbox-checked-icon-color: $--fill-base !default;
+
+// 自定义多选框
+/// 宽度
+$--checkbox-input-width: 14px !default;
+/// 高度
+$--checkbox-input-height: 14px !default;
+/// 边框
+$--checkbox-input-border: $--border-base !default;
+/// 边框圆角
+$--checkbox-border-radius: $--border-radius-small !default;
+/// 背景颜色
+$--checkbox-background-color: $--color-white !default;
+/// 边框颜色 hover、focus
+$--checkbox-input-border-color-hover: $--color-primary !default;

@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Radio />
+    <Checkbox />
   </div>
 </template>
 
 <script>
-import Radio from './examples/Radio.vue';
+import Checkbox from './examples/Checkbox.vue';
 
 export default {
-  components: { Radio },
+  components: { Checkbox },
 
   name: 'App',
 };

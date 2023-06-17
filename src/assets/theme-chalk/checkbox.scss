@@ -1,0 +1,116 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@import "./mixins/utils.scss";
+
+// 最外层 class
+$b: el-checkbox;
+
+// el-checkbox
+@include b(checkbox) {
+  position: relative;
+  display: inline-block;
+  font-size: $--font-size-base;
+  color: $--checkbox-font-color;
+  font-weight: $--checkbox-font-weight;
+  white-space: normal;
+  margin-right: 30px;
+  user-select: none;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  // el-checkbox__input
+  .#{$b}__input {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+
+    // 选中
+    @include when(checked) {
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        background-color: $--checkbox-checked-background-color;
+        border-color: $--checkbox-checked-input-border-color;
+
+        // 选中时的对勾
+        &::after {
+          transform: rotate(45deg) scaleY(1);
+        }
+      }
+
+      // 内容 el-checkbox__label
+      & + .#{$b}__label {
+        color: $--checkbox-checked-font-color;
+      }
+    }
+
+    // 聚焦 is-focus
+    @include when(focus) {
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        border-color: $--checkbox-input-border-color-hover;
+      }
+    }
+  }
+
+  // 自定义多选框 el-checkbox__inner
+  .#{$b}__inner {
+    position: relative;
+    display: inline-block;
+    width: $--checkbox-input-width;
+    height: $--checkbox-input-height;
+    border: $--checkbox-input-border;
+    border-radius: $--checkbox-border-radius;
+    background-color: $--checkbox-background-color;
+    z-index: $--index-normal;
+    box-sizing: border-box;
+    transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+      background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+
+    &:hover {
+      border-color: $--checkbox-input-border-color-hover;
+    }
+
+    // 选中时的对勾
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      width: 3px;
+      height: 7px;
+      border: 1px solid $--checkbox-checked-icon-color;
+      border-left: 0;
+      border-top: 0;
+      box-sizing: content-box;
+      transform: rotate(45deg) scaleY(0);
+      transform-origin: center;
+      transition: transform 0.15s ease-in 0.05s;
+    }
+  }
+
+  // 默认多选框 el-checkbox__original
+  .#{$b}__original {
+    position: absolute;
+    width: 0;
+    height: 0;
+    outline: none;
+    margin: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // 内容 el-checkbox__label
+  .#{$b}__label {
+    display: inline-block;
+    font-size: $--checkbox-font-size;
+    line-height: 19px;
+    padding-left: 10px;
+  }
+}
