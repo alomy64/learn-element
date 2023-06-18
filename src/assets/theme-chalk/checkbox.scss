@@ -31,7 +31,7 @@ $b: el-checkbox;
     outline: none;
     cursor: pointer;
 
-    // 选中
+    // 选中 is-checked
     @include when(checked) {
       // 自定义多选框 el-checkbox__inner
       .#{$b}__inner {
@@ -47,6 +47,47 @@ $b: el-checkbox;
       // 内容 el-checkbox__label
       & + .#{$b}__label {
         color: $--checkbox-checked-font-color;
+      }
+    }
+
+    // 禁用 is-disabled
+    @include when(disabled) {
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        background-color: $--checkbox-disabled-input-fill;
+        border-color: $--checkbox-disabled-border-color;
+        cursor: not-allowed;
+
+        // 选中时的对勾
+        &::after {
+          cursor: not-allowed;
+          border-color: $--checkbox-disabled-icon-color;
+        }
+
+        // 默认多选框 el-radio__original
+        & + .#{$b}__original {
+          cursor: not-allowed;
+        }
+      }
+
+      // 禁用 + 选中 is-checked
+      @include when(checked) {
+        // 自定义多选框 el-checkbox__inner
+        .#{$b}__inner {
+          background-color: $--checkbox-disabled-checked-input-fill;
+          border-color: $--checkbox-disabled-checked-input-border-color;
+
+          // 选中时的对勾
+          &::after {
+            border-color: $--checkbox-disabled-checked-icon-color;
+          }
+        }
+      }
+
+      // 内容 el-checkbox__original
+      & + .#{$b}__label {
+        color: $--disabled-color-base;
+        cursor: not-allowed;
       }
     }
 

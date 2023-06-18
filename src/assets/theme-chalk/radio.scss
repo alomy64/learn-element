@@ -124,7 +124,7 @@ $b: el-radio;
     outline: none;
     cursor: pointer;
 
-    // 选中
+    // 选中 is-checked
     @include when(checked) {
       // 自定义单选框 el-radio__inner
       .#{$b}__inner {
@@ -143,7 +143,7 @@ $b: el-radio;
       }
     }
 
-    // 禁用
+    // 禁用 is-disabled
     @include when(disabled) {
       // 自定义单选框 el-radio__inner
       .#{$b}__inner {
@@ -163,7 +163,7 @@ $b: el-radio;
         }
       }
 
-      // 选中
+      // 禁用 + 选中 is-checked
       @include when(checked) {
         // 自定义单选框 el-radio__inner
         .#{$b}__inner {

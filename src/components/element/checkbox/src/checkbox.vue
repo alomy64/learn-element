@@ -1,16 +1,20 @@
 <!-- Checkbox 多选框 -->
 <template>
   <!-- label
-    class: {选中}
+    class: {选中, 禁用}
    -->
-  <label class="el-checkbox" :class="{ 'is-checked': isChecked }">
+  <label class="el-checkbox" :class="{ 'is-checked': isChecked, 'is-disabled': isDisabled }">
     <!-- input
-      class: {选中, 聚焦}
+      class: {选中, 禁用, 聚焦}
      -->
-    <span class="el-checkbox__input" :class="{ 'is-checked': isChecked, 'is-focus': focus }">
+    <span
+      class="el-checkbox__input"
+      :class="{ 'is-checked': isChecked, 'is-disabled': isDisabled, 'is-focus': focus }"
+    >
       <!-- 自定义多选框 -->
       <span class="el-checkbox__inner"></span>
       <!-- 默认多选框
+        disabled: props 中的 disable 为 true 时禁用或其他情况下禁用, 详见 isDisabled
         aria-hidden: 元素会暴露给无障碍
         @focus: 聚焦时，即选中时，focus 为 true
         @blur: 失去焦点时，focus 为 false
@@ -21,6 +25,7 @@
         class="el-checkbox__original"
         :name="name"
         :value="label"
+        :disabled="isDisabled"
         v-model="model"
         aria-hidden="false"
         @focus="focus = true"
@@ -55,6 +60,8 @@ export default {
     label: {},
     // 原生 name 属性
     name: String,
+    // 是否禁用
+    disabled: Boolean,
   },
 
   data() {
@@ -95,6 +102,15 @@ export default {
       if ({}.toString.call(this.model) === '[object Boolean]') {
         return this.model;
       }
+    },
+    /**
+     * 是否禁用
+     * @return {boolean} 禁用 => true 不禁用 => false
+     */
+    isDisabled() {
+      const temCheckboxSize = this.disabled;
+
+      return temCheckboxSize;
     },
   },
 

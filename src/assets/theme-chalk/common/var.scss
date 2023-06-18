@@ -429,16 +429,6 @@ $--checkbox-font-weight: $--font-weight-primary !default;
 /// 字体颜色
 $--checkbox-font-color: $--color-text-regular !default;
 
-// 选中
-/// 字体颜色
-$--checkbox-checked-font-color: $--color-primary !default;
-/// 边框颜色
-$--checkbox-checked-input-border-color: $--color-primary !default;
-/// 背景颜色
-$--checkbox-checked-background-color: $--color-primary !default;
-/// 图标颜色
-$--checkbox-checked-icon-color: $--fill-base !default;
-
 // 自定义多选框
 /// 宽度
 $--checkbox-input-width: 14px !default;
@@ -452,3 +442,30 @@ $--checkbox-border-radius: $--border-radius-small !default;
 $--checkbox-background-color: $--color-white !default;
 /// 边框颜色 hover、focus
 $--checkbox-input-border-color-hover: $--color-primary !default;
+
+// 选中
+/// 字体颜色
+$--checkbox-checked-font-color: $--color-primary !default;
+/// 边框颜色
+$--checkbox-checked-input-border-color: $--color-primary !default;
+/// 背景颜色
+$--checkbox-checked-background-color: $--color-primary !default;
+/// 图标颜色
+$--checkbox-checked-icon-color: $--fill-base !default;
+
+// 禁用
+/// 边框颜色
+$--checkbox-disabled-border-color: $--border-color-base !default;
+/// 背景颜色
+$--checkbox-disabled-input-fill: #edf2fc !default;
+/// 图标颜色
+$--checkbox-disabled-icon-color: $--color-text-placeholder !default;
+
+// 禁用 + 选中
+/// 边框颜色
+$--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
+/// 背景颜色
+$--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
+/// 图标颜色
+$--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
+

@@ -10,6 +10,12 @@
       <!-- 未使用 v-model 绑定 -->
       <el-checkbox @change="handleChange" @input="handleInput">备选项</el-checkbox>
     </div>
+
+    <h1>禁用状态</h1>
+    <div>
+      <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
+      <el-checkbox v-model="checked2" disabled>备选项</el-checkbox>
+    </div>
   </div>
 </template>
 <script>
@@ -18,6 +24,10 @@ export default {
     return {
       // 单独使用时, checked 为 true 或 false
       checked: true,
+
+      /* 禁用状态 */
+      checked1: false,
+      checked2: true,
     };
   },
   methods: {
