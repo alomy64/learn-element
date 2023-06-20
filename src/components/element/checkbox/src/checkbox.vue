@@ -1,11 +1,14 @@
 <!-- Checkbox 多选框 -->
 <template>
   <!-- label
-    class: {选中, 禁用, 边框}
+    class: [尺寸, {选中, 禁用, 边框}]
    -->
   <label
     class="el-checkbox"
-    :class="{ 'is-checked': isChecked, 'is-disabled': isDisabled, 'is-bordered': border }"
+    :class="[
+      border && checkboxSize ? `el-checkbox--${checkboxSize}` : '',
+      { 'is-checked': isChecked, 'is-disabled': isDisabled, 'is-bordered': border },
+    ]"
   >
     <!-- input
       class: {选中, 禁用, 聚焦}
@@ -90,6 +93,11 @@ export default {
     falseLabel: [String, Number],
     // 是否显示边框
     border: Boolean,
+    // Checkbox 的尺寸，仅在 border 为真时有效
+    size: {
+      type: String,
+      validator: (val) => ['medium', 'small', 'mini'].includes(val),
+    },
   },
 
   data() {
@@ -145,7 +153,15 @@ export default {
      * @return {boolean} 禁用 => true 不禁用 => false
      */
     isDisabled() {
-      const temCheckboxSize = this.disabled;
+      const temCheckboxDisabled = this.disabled;
+
+      return temCheckboxDisabled;
+    },
+    /**
+     * 尺寸
+     */
+    checkboxSize() {
+      const temCheckboxSize = this.size;
 
       return temCheckboxSize;
     },

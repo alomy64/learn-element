@@ -38,10 +38,10 @@
       </div>
 
       <!-- 边框 + 尺寸 -->
-      <!-- <div style="margin-top: 20px">
+      <div style="margin-top: 20px">
         <el-checkbox v-model="borderChecked3" label="备选项1" border size="medium"></el-checkbox>
         <el-checkbox v-model="borderChecked4" label="备选项2" border size="medium"></el-checkbox>
-      </div> -->
+      </div>
 
       <!-- TODO 边框 + 多选框组 + 尺寸 -->
       <!-- <div style="margin-top: 20px">

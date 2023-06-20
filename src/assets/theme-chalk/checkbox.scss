@@ -35,9 +35,84 @@ $b: el-checkbox;
       border-color: $--color-primary;
     }
 
+    // 边框 + 禁用 is-disabled
+    &.is-disabled {
+      border-color: $--border-color-lighter;
+      cursor: not-allowed;
+    }
+
     // 相邻多选框且有边框
     & + .el-checkbox.is-bordered {
       margin-left: 10px;
+    }
+
+    // 中等
+    &.el-checkbox--medium {
+      height: $--checkbox-bordered-medium-height;
+      border-radius: $--button-medium-border-radius;
+      padding: $--checkbox-bordered-medium-padding;
+
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        height: $--checkbox-bordered-medium-input-height;
+        width: $--checkbox-bordered-medium-input-width;
+      }
+
+      // 内容 el-checkbox__label
+      .#{$b}__label {
+        font-size: $--button-medium-font-size;
+        line-height: 17px;
+      }
+    }
+
+    // 小型
+    &.el-checkbox--small {
+      height: $--checkbox-bordered-small-height;
+      border-radius: $--button-small-border-radius;
+      padding: $--checkbox-bordered-small-padding;
+
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        width: $--checkbox-bordered-small-input-width;
+        height: $--checkbox-bordered-small-input-height;
+
+        // 选中时的对勾
+        &::after {
+          width: 2px;
+          height: 6px;
+        }
+      }
+
+      // 内容 el-checkbox__label
+      .#{$b}__label {
+        font-size: $--button-small-font-size;
+        line-height: 15px;
+      }
+    }
+
+    // 超小
+    &.el-checkbox--mini {
+      height: $--checkbox-bordered-mini-height;
+      border-radius: $--button-mini-border-radius;
+      padding: $--checkbox-bordered-mini-padding;
+
+      // 自定义多选框 el-checkbox__inner
+      .#{$b}__inner {
+        width: $--checkbox-bordered-mini-input-width;
+        height: $--checkbox-bordered-mini-input-height;
+
+        // 选中时的对勾
+        &::after {
+          width: 2px;
+          height: 6px;
+        }
+      }
+
+      // 内容 el-checkbox__label
+      .#{$b}__label {
+        font-size: $--button-mini-font-size;
+        line-height: 12px;
+      }
     }
   }
 
