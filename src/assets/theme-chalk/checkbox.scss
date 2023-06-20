@@ -21,6 +21,26 @@ $b: el-checkbox;
     margin-right: 0;
   }
 
+  // 边框 is-bordered
+  @include when(bordered) {
+    height: $--checkbox-bordered-height;
+    line-height: normal;
+    border: $--border-base;
+    border-radius: $--border-radius-base;
+    padding: $--checkbox-bordered-padding;
+    box-sizing: border-box;
+
+    // 边框 + 选中 is-checked
+    @include when(checked) {
+      border-color: $--color-primary;
+    }
+
+    // 相邻多选框且有边框
+    & + .el-checkbox.is-bordered {
+      margin-left: 10px;
+    }
+  }
+
   // el-checkbox__input
   .#{$b}__input {
     position: relative;

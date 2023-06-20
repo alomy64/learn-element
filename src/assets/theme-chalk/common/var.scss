@@ -469,3 +469,8 @@ $--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
 /// 图标颜色
 $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
+// 边框
+/// 高度
+$--checkbox-bordered-height: 40px !default;
+/// 内间距
+$--checkbox-bordered-padding: 9px 20px 9px 10px !default;

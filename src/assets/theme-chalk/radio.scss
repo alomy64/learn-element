@@ -26,7 +26,7 @@ $b: el-radio;
   // 用户不能选择文本
   @include utils-user-select(none);
 
-  // 边框 is-border
+  // 边框 is-bordered
   @include when(bordered) {
     height: $--radio-bordered-height;
     border: $--border-base;

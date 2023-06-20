@@ -1,9 +1,12 @@
 <!-- Checkbox 多选框 -->
 <template>
   <!-- label
-    class: {选中, 禁用}
+    class: {选中, 禁用, 边框}
    -->
-  <label class="el-checkbox" :class="{ 'is-checked': isChecked, 'is-disabled': isDisabled }">
+  <label
+    class="el-checkbox"
+    :class="{ 'is-checked': isChecked, 'is-disabled': isDisabled, 'is-bordered': border }"
+  >
     <!-- input
       class: {选中, 禁用, 聚焦}
      -->
@@ -85,6 +88,8 @@ export default {
     trueLabel: [String, Number],
     // 未选中时的值
     falseLabel: [String, Number],
+    // 是否显示边框
+    border: Boolean,
   },
 
   data() {
@@ -130,7 +135,8 @@ export default {
     isChecked() {
       if ({}.toString.call(this.model) === '[object Boolean]') {
         return this.model;
-      } if (this.model !== null && this.model !== undefined) {
+      }
+      if (this.model !== null && this.model !== undefined) {
         return this.model === this.trueLabel;
       }
     },
