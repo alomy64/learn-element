@@ -45,9 +45,12 @@ $b: el-checkbox;
     & + .el-checkbox.is-bordered {
       margin-left: 10px;
     }
+  }
 
-    // 中等
-    &.el-checkbox--medium {
+  // 中等 el-checkbox--medium
+  @include m(medium) {
+    // 中等 + 边框 is-bordered
+    @include when(bordered) {
       height: $--checkbox-bordered-medium-height;
       border-radius: $--button-medium-border-radius;
       padding: $--checkbox-bordered-medium-padding;
@@ -64,9 +67,12 @@ $b: el-checkbox;
         line-height: 17px;
       }
     }
+  }
 
-    // 小型
-    &.el-checkbox--small {
+  // 小型 el-checkbox--small
+  @include m(small) {
+    // 小型 + 边框 is-bordered
+    @include when(bordered) {
       height: $--checkbox-bordered-small-height;
       border-radius: $--button-small-border-radius;
       padding: $--checkbox-bordered-small-padding;
@@ -89,9 +95,12 @@ $b: el-checkbox;
         line-height: 15px;
       }
     }
+  }
 
-    // 超小
-    &.el-checkbox--mini {
+  // 超小 el-checkbox--mini
+  @include m(mini) {
+    // 超小 + 边框 is-bordered
+    @include when(bordered) {
       height: $--checkbox-bordered-mini-height;
       border-radius: $--button-mini-border-radius;
       padding: $--checkbox-bordered-mini-padding;
